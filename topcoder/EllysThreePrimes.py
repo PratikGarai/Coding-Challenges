@@ -23,12 +23,57 @@ def get_primes_till(limit):
             l.append(i)
     return l
 
-def sum_satisfier():
-    return pass
+def get_primes_from_list(start, end, primes_list):
+    l = []
+    for i in range(start, end+1):
+        prime = True
+        sq_root  = int(i**0.5)
+        for j in primes_list:
+            if(j>sq_root):
+                break
+            if(i%j==0):
+                prime = False
+                break
+        if prime :
+            l.append(i)
+    return l
+
+def get_third(first, second, sums_list, digits):
+    s = 0
+    c_multiplier = 10 #current
+    p_multiplier = 1  #new
+    for i in range(digits) :
+        digit = sums_list[i]-(int((first%c_multiplier)/p_multiplier)+int((second%c_multiplier)/p_multiplier))
+        if digit<0:
+            return -1
+        s += digit*p_multiplier
+        p_multiplier, c_multiplier = c_multiplier, c_multiplier*10
+    return s
 
 def genrate_triplets(start, end, primes_list, sums_list):
-    l = []
-    return [0,0,0]
+    l = get_primes_from_list(start, end, primes_list)
+    le = len(l)
+
+    def check_presence(n) :   #binary search implementation
+        low , high = 0, le-1
+        while low<high :
+            mid = int((low+high)/2)
+            if l[mid]==n:
+                return True
+            elif l[mid]<n:
+                high = mid-1
+            else:
+                low = mid+1
+        return False
+
+    for i in range(le):
+        for j in range(i+1,le):
+            third = get_third(l[i], l[j], sums_list,5)
+            if(third==-1):
+                continue
+            if check_presence(third):
+                return [first, second, third]
+    return []
 
 def get3(a):
     primes_list = get_primes_till(1000)  #since upper limit is 10^6, we use all primes till 10^3
