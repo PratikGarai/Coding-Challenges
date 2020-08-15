@@ -50,39 +50,51 @@ def get_third(first, second, sums_list, digits):
         p_multiplier, c_multiplier = c_multiplier, c_multiplier*10
     return s
 
-def genrate_triplets(start, end, primes_list, sums_list):
+def generate_triplets(start, end, primes_list, sums_list):
     l = get_primes_from_list(start, end, primes_list)
     le = len(l)
 
     def check_presence(n) :   #binary search implementation
         low , high = 0, le-1
-        while low<high :
+        while low<=high :
             mid = int((low+high)/2)
             if l[mid]==n:
                 return True
-            elif l[mid]<n:
+            elif l[mid]>n:
                 high = mid-1
             else:
                 low = mid+1
         return False
 
-    for i in range(le):
-        for j in range(i+1,le):
-            third = get_third(l[i], l[j], sums_list,5)
-            if(third==-1):
-                continue
-            if check_presence(third):
-                return [first, second, third]
+    # test code 
+    if(20533 in l and 44927 in l and 87179 in l):
+        print("Prime list check")
+    if(check_presence(20533)):
+        print("Binary search check 1")
+    if(check_presence(44927)):
+        print("Binary search check 2")
+    if(check_presence(87179)):
+        print("Binary search check 3")
+    if(get_third(20533,44927,sums_list,5)==87179):
+        print("Generation correct ",get_third(20533,44927,sums_list,5))
+    else :
+        print("Generation incorrect ",get_third(20533,44927,sums_list,5))
+
+    # for i in range(le):
+    #     for j in range(i+1,le):
+    #         third = get_third(l[i], l[j], sums_list,5)
+    #         if(third==-1):
+    #             continue
+    #         if check_presence(third):
+    #             return [l[i], l[j], third]
     return []
 
 def get3(a):
     primes_list = get_primes_till(1000)  #since upper limit is 10^6, we use all primes till 10^3
-    return genrate_triplets(10000,99999,primes_list,a)
+    return generate_triplets(10000,99999,primes_list,a)
 
 def main():
-    a = []
-    for i in range(5):
-        a.append(int(input()))
+    a = list(map(int, input().split()))
     start = time.time()
     for i in get3(a):
         print(i,end="\t")
