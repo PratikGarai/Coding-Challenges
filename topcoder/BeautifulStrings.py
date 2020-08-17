@@ -7,15 +7,12 @@ def compute(ca,cb,ma,mb):
         return ma
     if ca==cb :
         return 2*ca
-    min_groups = 0
-    max_groups = 0
-    max_count = 0
     if ca<cb :
         min_groups = ca
         max_groups = ca+2
         max_limit = mb
         max_count = ma
-    else cb<ca :
+    else :
         min_groups = cb
         max_groups = cb+2
         max_limit = ma
