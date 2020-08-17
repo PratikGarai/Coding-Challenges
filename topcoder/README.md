@@ -2,7 +2,6 @@
 <hr>
 <table>
 <th>
-<td>Number</td>
 <td>Name</td>
 <td>URL</td>
 </th>
