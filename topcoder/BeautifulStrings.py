@@ -1,5 +1,3 @@
-import time
-
 def compute(ca,cb,ma,mb):
     if ma==0 or ca==0:
         return mb
