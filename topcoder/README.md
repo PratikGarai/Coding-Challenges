@@ -11,3 +11,6 @@
 <tr>
 <td>2.</td><td>BeautifulString</td><td>https://community.topcoder.com/stat?c=problem_statement&pm=8193</td>
 </tr>
+<tr>
+<td>3.</td><td>TomekPhone</td><td>https://community.topcoder.com/stat?c=problem_statement&pm=12296</td>
+</tr>
