@@ -1,0 +1,10 @@
+<h2>List of Problems</h2>
+<hr>
+<table>
+<th>
+<td>Name</td>
+<td>URL</td>
+</th>
+<tr>
+<td>1.</td><td>Special Power Strings</td><td>https://www.codechef.com/problems/SPPST</td>
+</tr>
