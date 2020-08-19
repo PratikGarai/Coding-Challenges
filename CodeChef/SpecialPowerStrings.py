@@ -4,8 +4,9 @@ def make_dict(string):
     d  = {}
     for i in range(97,123):
         d[chr(i)] = 0
-    for i in string and i not in ('#','!','?'):
-        d[i] += 1
+    for i in string :
+        if i not in ('#','!','?'):
+            d[i] += 1
     return d
 
 def subs_dict(d1, d2):
@@ -24,20 +25,20 @@ def get_set(string):
 def compute(s1,s2,hx,qm,ex):
     d1 = make_dict(s1)
     d2 = make_dict(s2)
-    diff = subs_dict(s1,s2)
+    diff = subs_dict(d1,d2)
     l = len(diff)
     if l==0:
         return 0
     ds = get_set(diff)
     hs = get_set(hx)
-    qe = get_set(qm)
+    qs = get_set(qm)
     es = get_set(ex)
 
-    if ds-hs=={} or ds-qs=={} or ds-es=={}:
+    if len(ds-hs)==0 or len(ds-qs)==0 or len(ds-es)==0:
         return 1
-    if ds-(hs|qs)=={} or ds-(qs|es) or ds-(hs|es):
+    if len(ds-(hs|qs))==0 or len(ds-(qs|es))==0 or len(ds-(hs|es))==0:
         return 2
-    if ds-(hs|qs|es):
+    if len(ds-(hs|qs|es))==0:
         return 3
     else: 
         return -1
