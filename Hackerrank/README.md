@@ -4,3 +4,4 @@
 4. Sequence Equation https://www.hackerrank.com/challenges/permutation-equation/problem
 5. Append and Delete https://www.hackerrank.com/challenges/append-and-delete/problem
 6. Missing Numbers https://www.hackerrank.com/challenges/missing-numbers/problem
+7. Closest Numbers https://www.hackerrank.com/challenges/closest-numbers/problem
