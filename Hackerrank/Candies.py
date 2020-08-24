@@ -1,11 +1,3 @@
-
-import math
-import os
-import random
-import re
-import sys
-
-# Complete the candies function below.
 def candies(n, arr):
     l = len(arr)
     candies = [0 for i in range(l)]
@@ -31,22 +23,15 @@ def candies(n, arr):
                 candies[pos] = candies[pos-1]+1
             else :
                 candies[pos] = max(candies[pos-1], candies[pos+1]) +1
-    print(candies)
     return sum(candies)
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
+def main():
     n = int(input())
-
     arr = []
+    for i in range(n):
+        a = int(input())
+        arr.append(a)
+    print(candies(n, arr))
 
-    for _ in range(n):
-        arr_item = int(input())
-        arr.append(arr_item)
-
-    result = candies(n, arr)
-
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+if __name__ == '__main__':
+    main()
