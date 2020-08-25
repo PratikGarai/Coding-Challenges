@@ -7,3 +7,5 @@
 7. Closest Numbers https://www.hackerrank.com/challenges/closest-numbers/problem
 8. Max Min https://www.hackerrank.com/challenges/angry-children/problem
 9. Candies https://www.hackerrank.com/challenges/candies/problem
+10. Pairs https://www.hackerrank.com/challenges/pairs/problem
+11. Minimum Distances https://www.hackerrank.com/challenges/minimum-distances/problem
