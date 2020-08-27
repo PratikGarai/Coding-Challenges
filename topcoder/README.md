@@ -17,4 +17,7 @@
 <tr>
 <td>4.</td><td>NextOlympics</td><td>https://community.topcoder.com/stat?c=problem_statement&pm=16281</td>
 </tr>
+<tr>
+<td>5.</td><td>KingsFactorization</td><td>https://community.topcoder.com/stat?c=problem_statement&pm=13594</td>
+</tr>
 </table>
