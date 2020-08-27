@@ -1,5 +1,23 @@
-def get_mid(a,b):
-    return 0
+prime_list = []
+
+def check_prime(a):
+    global prime_list
+    for i in prime_list:
+        if(a%i==0):
+            return False
+    prime_list.append(a)
+    return True
+
+def get_mid(n,a,b):
+    if a==b :
+        return a
+    if(n%a==0):
+        return a
+    for i in range(a+1, b):
+        if check_prime(i):
+            if n%i==0 :
+                return i
+    return b
 
 def compute(n,l):
     le = len(l)
