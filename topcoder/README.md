@@ -20,4 +20,7 @@
 <tr>
 <td>5.</td><td>KingsFactorization</td><td>https://community.topcoder.com/stat?c=problem_statement&pm=13594</td>
 </tr>
+<tr>
+<td>6.</td><td>Missing Parantheses</td><td>https://community.topcoder.com/stat?c=problem_statement&pm=10943</td>
+</tr>
 </table>
