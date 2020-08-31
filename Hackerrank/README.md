@@ -11,3 +11,4 @@
 11. Minimum Distances https://www.hackerrank.com/challenges/minimum-distances/problem
 12. Migratory Birds https://www.hackerrank.com/challenges/migratory-birds/problem
 13. ACM ICPC Team https://www.hackerrank.com/challenges/acm-icpc-team/problem
+14. Counting Sort 1 https://www.hackerrank.com/challenges/countingsort1/problem
