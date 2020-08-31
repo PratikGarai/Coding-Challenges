@@ -6,7 +6,6 @@ def compute(a, target,n):
         return True
     visited = [[0 for i in range(n)] for j in range(n)]
     def traverse(y,x,value):
-        # print(y,x)
         if value==target:
             if x==0 and y==0:
                 return True
@@ -15,16 +14,20 @@ def compute(a, target,n):
         if visited[y][x]==1:
             return False
         visited[y][x] = 1
-        l = []
         for i in a[y][x]:
-            l.append(traverse(y+dy[i], x+dx[i], value+1))
+            res = traverse(y+dy[i], x+dx[i], value+1)
+            if res:
+                a[y][x] = i
+                return True
         visited[y][x] = 0
-        if any(l):
-            return True
-        else :
-            return False
+        return False
     result = traverse(0,0, 0)
-    print(result)
+    if result :
+        print('YES')
+        for i in range(n):
+            print(' '.join(a[i]))
+    else:
+        print('NO')
 
 def main():
     t = int(input())
