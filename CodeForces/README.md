@@ -11,4 +11,7 @@
 <tr>
 <td>2.</td><td>Mislove Has Lost An Array</td><td>https://codeforces.com/problemset/problem/1204/B</td>
 </tr>
+<tr>
+<td>3.</td><td>Disturbed People</td><td>https://codeforces.com/problemset/problem/1077/B</td>
+</tr>
 </table>
