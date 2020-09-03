@@ -14,4 +14,7 @@
 <tr>
 <td>3.</td><td>Disturbed People</td><td>https://codeforces.com/problemset/problem/1077/B</td>
 </tr>
+<tr>
+<td>4.</td><td>Ternary Sequence</td><td>https://codeforces.com/problemset/problem/1401/B</td>
+</tr>
 </table>
