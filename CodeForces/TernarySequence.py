@@ -1,25 +1,14 @@
 def process(a,b,c,d,e,f):
     s = 0
-
-    if c>e:
-        s = 2*e
-        c -= e
-        e = 0
-    else:
-        s = 2*c
-        c = 0
-        e -= c
-    if c>f :
-        return s
-    else :
-        c = 0
-        f -= c
-
-    if b<=d+e:
-        return s
-    else :
+    m2 = min(c,e)
+    s += 2*m2
+    c -= m2
+    e -= m2
+    f -= c
+    f -= a
+    if f>0:
         s -= 2*f
-        return s
+    return s
 
 def main():
     n = int(input())
