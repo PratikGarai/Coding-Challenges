@@ -1,9 +1,16 @@
+def factorize(g):
+    c = 0
+    for i in range(1,g+1):
+        if g%i==0:
+            c+= 1
+    return c
+
 def gcd_arr(arr):
     
     def gcd(a, b):
-        if(a==0):
+        if a==0 :
             return b
-        return(b%a, a)
+        return gcd(b%a, a)
     g = arr[0]
     for i in arr[1:]:
         g = gcd(g, i)
