@@ -18,6 +18,6 @@
 <td>4.</td><td>Ternary Sequence</td><td>https://codeforces.com/problemset/problem/1401/B</td>
 </tr>
 <tr>
-<td>5.</td><td>Common Divisors</td><td>https://codeforces.com/problemset/problem/1203/C</td>
+<td>5.</td><td>Common Divisors(TLE unsolved)</td><td>https://codeforces.com/problemset/problem/1203/C</td>
 </tr>
 </table>
