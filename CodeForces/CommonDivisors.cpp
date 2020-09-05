@@ -1,64 +1,34 @@
 #include<iostream>
-#include<algorithm>
 using namespace std;
+typedef long long ll;
 
-long long int get_factors(long long int n)
+ll gcd(ll a, ll b)
 {
-     if(n==1)
-             return 1;
-     long long int c = 0;
-     for(int i=2;i<n;i++)
-             if(n%i==0)
-                       c++;
-     return c+2;
+	if(a==0)
+		return b;
+	gcd(b%a, a);
 }
 
 int main()
 {
-	long n;
+	ll n, i;
 	cin>>n;
-	long long int a[n];
-	for(long i=0;i<n;i++)
-	        cin>>a[i];
-    sort(a, a+n);
-    
-    long long int ll = 0;
-    long long int hl = n-1;
-    while(a[ll]!=a[hl])
-    {
-            long c_0 = 0;
-            for(long i = ll; i<hl; i++)
-            {
-                     a[i] = a[i+1]-a[i];
-                     if(a[i]==0)  c_0++;
-            }
-            ll = c_0;
-            hl--;
-            sort(a,a+hl);
-    }
-                      
-    long long int f = a[ll];
-    for(long long int div=1; div<=f; div++)
-    {
-             long long divisor = (long long int)(f/div); 
-             int flag =1;
-             for(long i=0; i<n-1;i++)
-             {
-                 if(a[i]%divisor!=0)
-                 {
-                     flag = 0;
-                     break;
-                 }
-             }
-             if(flag==1)  
-             {
-                 f = divisor;
-                 break;
-             }
-    }
-             
-	long long int c = get_factors(f);
-	cout<<c<<endl;
-
+	ll a[n];
+	ll g=0;
+	for(i=0;i<n;i++)
+	{
+		cin>>a[i];
+		g = gcd(g,a[i]);
+	}
+	
+	ll f_c = 0;
+	for(i=1;i*i<g;i++)
+	{
+		if(g%i) continue;
+		else f_c += 2;
+	}
+	if(g==i*i) f_c +=1 ;
+	cout<<f_c<<endl;
+	
 	return 0;
 }
