@@ -21,6 +21,9 @@
 <td>5.</td><td>KingsFactorization</td><td>https://community.topcoder.com/stat?c=problem_statement&pm=13594</td>
 </tr>
 <tr>
-<td>6.</td><td>Missing Parantheses</td><td>https://community.topcoder.com/stat?c=problem_statement&pm=10943</td>
+<td>6.</td><td>Missing Paranthesis</td><td>https://community.topcoder.com/stat?c=problem_statement&pm=10943</td>
+</tr>
+<tr>
+<td>7.</td><td>Largest Subsequence</td><td>https://community.topcoder.com/stat?c=problem_statement&pm=11471</td>
 </tr>
 </table>
