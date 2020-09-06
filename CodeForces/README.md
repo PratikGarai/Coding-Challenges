@@ -21,6 +21,6 @@
 <td>5.</td><td>Common Divisors</td><td>https://codeforces.com/problemset/problem/1203/C</td>
 </tr>
 <tr>
-<td>6.</td><td>Power Sequence</td><td>https://codeforces.com/problemset/problem/1397/B</td>
+<td>6.</td><td>Power Sequence(TLE)</td><td>https://codeforces.com/problemset/problem/1397/B</td>
 </tr>
 </table>
