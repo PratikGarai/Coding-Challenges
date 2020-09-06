@@ -23,4 +23,7 @@
 <tr>
 <td>6.</td><td>Power Sequence(TLE)</td><td>https://codeforces.com/problemset/problem/1397/B</td>
 </tr>
+<tr>
+<td>7.</td><td>Relatively Prime Numbers</td><td>https://codeforces.com/problemset/problem/1051/B</td>
+</tr>
 </table>
