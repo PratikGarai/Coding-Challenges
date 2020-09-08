@@ -26,4 +26,7 @@
 <tr>
 <td>7.</td><td>Relatively Prime Numbers</td><td>https://codeforces.com/problemset/problem/1051/B</td>
 </tr>
+<tr>
+<td>8.</td><td>Friendly Numbers</td><td>https://codeforces.com/problemset/problem/100/B</td>
+</tr>
 </table>
