@@ -30,6 +30,6 @@
 <td>8.</td><td>Friendly Numbers</td><td>https://codeforces.com/problemset/problem/100/B</td>
 </tr>
 <tr>
-<td>9.</td><td>Sheldon And Ice Pieces</td><td>https://codeforces.com/problemset/problem/328/B</td>
+<td>9.</td><td>Sheldon And Ice Pieces(Wrong)</td><td>https://codeforces.com/problemset/problem/328/B</td>
 </tr>
 </table>

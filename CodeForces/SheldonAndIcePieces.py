@@ -1,12 +1,14 @@
 def factorial(n):
     p = 1
-    for i in range(2,n+1):
+    for i in range(1,n+1):
         p *= i
     return p
 
 def get_permutatuions(a,b,c,d):
     if (a+b)>(c+d):
         return 0
+    if (a+b)==0:
+        return 1
     return int(factorial(c+d)/(factorial(c+d-a-b)*factorial(c)*factorial(d)))
 
 def is_valid(n,m):
