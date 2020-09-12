@@ -32,6 +32,10 @@
 <tr>
 <td>9.</td><td>Sheldon And Ice Pieces(Wrong)</td><td>https://codeforces.com/problemset/problem/328/B</td>
 </tr>
+<tr>
 <td>10.</td><td>Balanced BitString</td><td>https://codeforces.com/problemset/problem/1404/A</td>
+</tr>
+<tr>
+<td>11.</td><td>Decrease the Sum of Digits</td><td>https://codeforces.com/problemset/problem/1409/D</td>
 </tr>
 </table>
