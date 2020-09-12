@@ -32,4 +32,6 @@
 <tr>
 <td>9.</td><td>Sheldon And Ice Pieces(Wrong)</td><td>https://codeforces.com/problemset/problem/328/B</td>
 </tr>
+<td>10.</td><td>Balanced BitString</td><td>https://codeforces.com/problemset/problem/1404/A</td>
+</tr>
 </table>
