@@ -1,5 +1,4 @@
 def checker(a, n , k):
-        #getting initial window stats
         n0, n1, qm = 0, 0, 0
         for i in range(k):
             if a[i]=='0':
