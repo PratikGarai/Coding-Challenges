@@ -1,27 +1,37 @@
+def get_sum(n):
+    s = 0
+    while(n):
+        s += n%10
+        n = n//10
+    return int(s)
+
 def get_results():
-    n, s = input().split()
-    s = int(s)
-    su = 0
-    ind = -1
-    for index,i in enumerate(n):
-        su += int(i)
-        if(su>=s):
-            ind = index
-            break
-    if ind==-1:
-        print(0)
-        return
-    if su==s and ind==len(n)-1:
-        print(0)
-        return
-    l = ind-1
-    l = len(n)-l-1
-    print(10**l-int(n[ind:]))
+    n, s = list(map(int, input().split()))
+    
+    presum = get_sum(n)
+    if presum<=s:
+        return 0
+    
+    mul = 1
+    moves = 0 
+    while(presum>s):
+        d = (n//mul)%10
+        if(d!=0):
+            dif = (10-d)*mul
+            n += dif
+            moves += dif
+        presum = get_sum(n)
+        mul = mul*10
+    return moves
 
 def main():
     t = int(input())
+    res = []
     for i in range(t):
-        get_results()
+        res.append(get_results())
+
+    for i in res :
+        print(i)
 
 if __name__=='__main__':
     main()
