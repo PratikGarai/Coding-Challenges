@@ -39,6 +39,6 @@
 <td>11.</td><td>Decrease the Sum of Digits</td><td>https://codeforces.com/problemset/problem/1409/D</td>
 </tr>
 <tr>
-<td>12.</td><td>RPG Protagonist</td><td>https://codeforces.com/problemset/problem/1400/B</td>
+<td>12.</td><td>RPG Protagonist(TLE)</td><td>https://codeforces.com/problemset/problem/1400/B</td>
 </tr>
 </table>
