@@ -36,12 +36,8 @@ def get_results():
 
 def main():
     t = int(input())
-    res = []
     for i in range(t):
-        res.append(get_results())
+        print(get_results())
     
-    for i in res:
-        print(i)
-
 if __name__=='__main__':
     main()
