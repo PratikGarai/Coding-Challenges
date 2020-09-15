@@ -7,7 +7,7 @@ def get_result():
     diff = y-x
     min_d = diff
     for i in range(1, diff):
-        if diff%i==0 and x-i>0 and diff//i<=n and y-(n-1)*i<=x :
+        if diff%i==0 and diff//i<=n and y-(n-1)*i<=x :
             min_d = i
             break
     arr = []
