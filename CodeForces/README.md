@@ -41,4 +41,7 @@
 <tr>
 <td>12.</td><td>RPG Protagonist</td><td>https://codeforces.com/problemset/problem/1400/B</td>
 </tr>
+<tr>
+<td>13.</td><td>Yet Another Array Restoration</td><td>https://codeforces.com/problemset/problem/1409/C</td>
+</tr>
 </table>
