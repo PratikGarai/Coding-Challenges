@@ -44,4 +44,7 @@
 <tr>
 <td>13.</td><td>Yet Another Array Restoration</td><td>https://codeforces.com/problemset/problem/1409/C</td>
 </tr>
+<tr>
+<td>14.</td><td>Omkar and Infinity Clock</td><td>https://codeforces.com/problemset/problem/1392/B</td>
+</tr>
 </table>
