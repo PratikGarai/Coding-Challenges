@@ -5,12 +5,14 @@ def get_result():
     if k==0 :
         return k
     mx = max(l)
-    mi = min(l)
     for i in range(n):
         l[i] = mx-l[i]
-    #all negatives turn to positive
-    if k==1:
+    
+    if k%2==1:
         return l
+    mx = max(l)
+    for i in range(n):
+        l[i] = mx-l[i] 
 
     return l
 
