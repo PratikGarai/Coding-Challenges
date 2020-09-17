@@ -12,24 +12,6 @@ def get_result():
     if k==1:
         return l
 
-    mx = max(l)
-    for i in range(n):
-        l[i] = mx-l[i]
-    #the first 0 appears
-    if k==2:
-        return l
-
-    mx =  max(l)
-    if mi<0:
-        k -= 1
-    if k%2==1:
-        for i in range(n):
-            if l[i]==0:
-                l[i] = mx
-            elif l[i]==mx:
-                l[i] = 0
-            else:
-                l[i] = mx-l[i]
     return l
 
 def main():
