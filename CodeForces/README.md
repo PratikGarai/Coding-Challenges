@@ -47,4 +47,7 @@
 <tr>
 <td>14.</td><td>Omkar and Infinity Clock</td><td>https://codeforces.com/problemset/problem/1392/B</td>
 </tr>
+<tr>
+<td>15.</td><td>Buying Torches</td><td>https://codeforces.com/problemset/problem/1418/A</td>
+</tr>
 </table>
