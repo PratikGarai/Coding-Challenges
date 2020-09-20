@@ -6,13 +6,15 @@ def main():
     print("\nEnter set 1")
     for i in range(n):
         inp = input()
-        while(inp.strip!=""):
-            t1.append(inp)
+        while(inp.strip==""):
+            inp = input()
+        t1.append(inp)
     print("\nEnter set 2")
     for i in range(n):
         inp = input()
-        while(inp.strip!=""):
-            t2.append(inp)
+        while(inp.strip==""):
+            inp = input()
+        t2.append(inp)
     c = 0
     for i in range(n):
         if t1[i]!=t2[i]:
