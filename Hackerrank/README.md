@@ -19,3 +19,4 @@
 <tr><td>12.</td><td>Migratory Birds</td><td>https://www.hackerrank.com/challenges/migratory-birds/problem</td></tr>
 <tr><td>13.</td><td>Marc's Cakewalk</td><td>https://hackerrank.com/challenges/marcs-cakewalk/problem</td></tr>
 <tr><td>14.</td><td>Counting Sort 1</td><td>https://www.hackerrank.com/challenges/countingsort1/problem</td></tr>
+<tr><td>15.</td><td>Maximum Palindromes</td><td>https://www.hackerrank.com/challenges/maximum-palindromes/problem</td></tr>
