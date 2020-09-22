@@ -50,4 +50,7 @@
 <tr>
 <td>15.</td><td>Buying Torches</td><td>https://codeforces.com/problemset/problem/1418/A</td>
 </tr>
+<tr>
+<td>16.</td><td>Sages's Birthday 1</td><td>https://codeforces.com/problemset/problem/1419/D1</td>
+</tr>
 </table>
