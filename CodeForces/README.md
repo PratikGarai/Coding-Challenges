@@ -53,4 +53,7 @@
 <tr>
 <td>16.</td><td>Sages's Birthday 1</td><td>https://codeforces.com/problemset/problem/1419/D1</td>
 </tr>
+<tr>
+<td>16.</td><td>Sages's Birthday 2</td><td>https://codeforces.com/problemset/problem/1419/D2</td>
+</tr>
 </table>
