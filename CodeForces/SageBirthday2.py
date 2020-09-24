@@ -1,27 +1,37 @@
 def main():
-    n = int(input())
+    n  = int(input())
     l = list(map(int, input().split()))
-    l = sorted(l)
-    mx = l[-1]
+    l  = sorted(l)
 
-    occupied = [0 for i in range(n)]
-    
-    low = 0
-    high = 1
-    num = 0
+    ind = n//2
+    while(l[ind]==l[ind-1] and ind>1):
+        ind -= 1
 
-    while(l[high]==l[low] and high<n):
-        high += 1
+    b1 = l[:ind]
+    b2 = l[ind:]
 
-    occupied[low] = 1
-    occupied[high] = 1
+    len1 = ind
+    len2 = n-ind
 
-    while(low<n-1 and high<n):
+    if len1<len2:
+        print(len1)
+    else:
+        print(len1-1)
 
+    i1 = 0
+    i2 = 0
+    for i in range(2*l1):
+        if i%2==1:
+            print(b1[i1], end=' ')
+            i1 += 1
+        else :
+            print(b2[i2], end=' ')
+            i2 += 1
 
-    for i in range(n):
-        if occupied[i]==0:
-            print(l[i], end=' ')
+    for i in range(2*l1, l2):
+        print(b2[i2], end = ' ')
+        i2 += 1
+
     print()
 
 if __name__=='__main__':
