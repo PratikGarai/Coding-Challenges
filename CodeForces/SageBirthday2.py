@@ -10,13 +10,13 @@ def main():
     b1 = l[:ind]
     b2 = l[ind:]
 
-    len1 = ind
-    len2 = n-ind
+    l1 = ind
+    l2 = n-ind
 
-    if len1<len2:
-        print(len1)
+    if l1<l2:
+        print(l1)
     else:
-        print(len1-1)
+        print(l1-1)
 
     i1 = 0
     i2 = 0
@@ -28,7 +28,7 @@ def main():
             print(b2[i2], end=' ')
             i2 += 1
 
-    for i in range(2*l1, l2):
+    while(i2<l2):
         print(b2[i2], end = ' ')
         i2 += 1
 
