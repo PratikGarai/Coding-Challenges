@@ -3,9 +3,22 @@ def main():
     l = list(map(int, input().split()))
     l  = sorted(l)
 
+    if n==1 or n==2:
+        print(0)
+        for i in l:
+            print(i, end=' ')
+        print()
+        return 
+    
+    flag = 0
+
     ind = n//2
-    while(l[ind]==l[ind-1] and ind>1):
+    while(l[ind]==l[ind+1] and ind>0):
         ind -= 1
+        flag = 1
+    
+    if flag==1:
+        ind += 1
 
     b1 = l[:ind]
     b2 = l[ind:]
