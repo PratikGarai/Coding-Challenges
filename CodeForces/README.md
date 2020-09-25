@@ -56,4 +56,7 @@
 <tr>
 <td>17.</td><td>Sages's Birthday 2</td><td>https://codeforces.com/problemset/problem/1419/D2</td>
 </tr>
+<tr>
+<td>18.</td><td>KillJoy</td><td>https://codeforces.com/problemset/problem/1419/C</td>
+</tr>
 </table>
