@@ -59,4 +59,7 @@
 <tr>
 <td>18.</td><td>KillJoy</td><td>https://codeforces.com/problemset/problem/1419/C</td>
 </tr>
+<tr>
+<td>19.</td><td>Rock and Lever</td><td>https://codeforces.com/problemset/problem/1420/B</td>
+</tr>
 </table>
