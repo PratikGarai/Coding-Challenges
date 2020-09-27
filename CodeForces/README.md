@@ -63,6 +63,6 @@
 <td>19.</td><td>Rock and Lever</td><td>https://codeforces.com/problemset/problem/1420/B</td>
 </tr>
 <tr>
-<td>20.</td><td>Captain of Knights</td><td>https://codeforces.com/problemset/problem/1425/C</td>
+<td>20.</td><td>Fixed Point Removal</td><td>https://codeforces.com/problemset/problem/1404/C</td>
 </tr>
 </table>
