@@ -65,4 +65,7 @@
 <tr>
 <td>20.</td><td>Floor Number</td><td>https://codeforces.com/problemset/problem/1426/A</td>
 </tr>
+<tr>
+<td>21.</td><td>Floor Number</td><td>https://codeforces.com/problemset/problem/1426/B</td>
+</tr>
 </table>
