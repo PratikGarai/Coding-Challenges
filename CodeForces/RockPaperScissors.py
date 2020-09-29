@@ -1,4 +1,15 @@
 def min_wins(a,b):
+    l1 = min(a[0],b[2])
+    l2 = min(a[1],b[0])
+    l3 = min(a[2],b[1])
+
+    a[0] -= l1
+    b[2] -= l1
+    a[1] -= l2
+    b[0] -= l2
+    a[2] -= l3
+    b[1] -= l3
+
     d1 = min(a[0],b[0])
     d2 = min(a[1],b[1])
     d3 = min(a[2],b[2])
@@ -10,16 +21,8 @@ def min_wins(a,b):
     a[2] -= d3
     b[2] -= d3
 
-    l1 = min(a[0],b[2])
-    l2 = min(a[1],b[0])
-    l3 = min(a[2],b[1])
-
-    a[0] -= l1
-    b[2] -= l1
-    a[1] -= l2
-    b[0] -= l2
-    a[2] -= l3
-    b[1] -= l3
+    print(a)
+    print(b)
     
     return sum(a)
 
