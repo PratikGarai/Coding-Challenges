@@ -62,4 +62,7 @@
 <tr>
 <td>19.</td><td>Rock and Lever</td><td>https://codeforces.com/problemset/problem/1420/B</td>
 </tr>
+<tr>
+<td>20.</td><td>Floor Number</td><td>https://codeforces.com/problemset/problem/1426/A</td>
+</tr>
 </table>
