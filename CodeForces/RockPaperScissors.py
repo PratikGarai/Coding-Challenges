@@ -1,24 +1,35 @@
 def min_wins(c,d):
-    a = c.copy()
-    b = d.copy()
 
-    min_wins = sum(a)
     def compute(arr):
-        for i in arr :
-            elif i==0:
-                pass
-            elif i==1:
-                pass
-            elif i==2:
-                pass
-            elif i==3:
-                pass
-            elif i==4:
-                pass
-            elif i==5:
-                pass
+        a = c.copy()
+        b = d.copy()
 
-        return 0
+        for i in arr :
+            if i==0:
+                m = min(a[0], b[2])
+                a[0] -= m
+                b[2] -= m
+            elif i==1:
+                m = min(a[1], b[0])
+                a[1] -= m
+                b[0] -= m
+            elif i==2:
+                m = min(a[2], b[1])
+                a[2] -= m
+                b[1] -= m
+            elif i==3:
+                m = min(a[0], b[0])
+                a[0] -= m
+                b[0] -= m
+            elif i==4:
+                m = min(a[1], b[1])
+                a[1] -= m
+                b[1] -= m
+            elif i==5:
+                m = min(a[2], b[2])
+                a[2] -= m
+                b[2] -= m
+        return sum(a)
 
     def check_permute(ind, arr):
         if ind==5:
