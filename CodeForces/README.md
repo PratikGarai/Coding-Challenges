@@ -72,6 +72,6 @@
 <td>22.</td><td>Floor Number</td><td>https://codeforces.com/problemset/problem/1426/C</td>
 </tr>
 <tr>
-<td>23.</td><td>Rock, Paper, Scissorrs(incomplete)</td><td>https://codeforces.com/problemset/problem/1426/E</td>
+<td>23.</td><td>Rock, Paper, Scissorrs</td><td>https://codeforces.com/problemset/problem/1426/E</td>
 </tr>
 </table>
