@@ -74,4 +74,7 @@
 <tr>
 <td>23.</td><td>Rock, Paper, Scissorrs</td><td>https://codeforces.com/problemset/problem/1426/E</td>
 </tr>
+<tr>
+<td>24.</td><td>Huge Boxes of Animal Toys</td><td>https://codeforces.com/problemset/problem/1425/H</td>
+</tr>
 </table>

@@ -13,17 +13,11 @@ def process():
                 m += 1
             moves = min(moves, m)
 
-    # return int(moves)
     print(int(moves))
 
 def main():
-    # res = []
     for i in range(int(input())):
-        # res.append(process())
         process()
-
-    # for i in res :
-    #     print(i)
 
 if __name__=='__main__':
     main()
