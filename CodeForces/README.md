@@ -77,4 +77,7 @@
 <tr>
 <td>24.</td><td>Huge Boxes of Animal Toys</td><td>https://codeforces.com/problemset/problem/1425/H</td>
 </tr>
+<tr>
+<td>25.</td><td>Two Arrays</td><td>https://codeforces.com/problemset/problem/1417/B</td>
+</tr>
 </table>
