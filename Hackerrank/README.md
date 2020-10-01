@@ -20,3 +20,7 @@
 <tr><td>13.</td><td>Marc's Cakewalk</td><td>https://hackerrank.com/challenges/marcs-cakewalk/problem</td></tr>
 <tr><td>14.</td><td>Counting Sort 1</td><td>https://www.hackerrank.com/challenges/countingsort1/problem</td></tr>
 <tr><td>15.</td><td>Maximum Palindromes</td><td>https://www.hackerrank.com/challenges/maximum-palindromes/problem</td></tr>
+<tr><td>16.</td><td>ACM ICPC Team</td><td>https://www.hackerrank.com/challenges/acm-icpc-team/problem</td></tr>
+<tr><td>17.</td><td>Cut the sticks</td><td>https://www.hackerrank.com/challenges/cut-the-sticks/problem</td></tr>
+<tr><td>18.</td><td>Equalize the Array</td><td>https://www.hackerrank.com/challenges/equality-in-a-array/problem</td></tr>
+<tr><td>19.</td><td>Counting Sort 2</td><td>https://www.hackerrank.com/challenges/countingsort2/problem</td></tr>
