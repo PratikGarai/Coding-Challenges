@@ -12,14 +12,14 @@
 <tr><td>5.</td><td>Append and Delete</td><td>https://www.hackerrank.com/challenges/append-and-delete/problem</td></tr>
 <tr><td>6.</td><td>Missing Numbers</td><td>https://www.hackerrank.com/challenges/missing-numbers/problem</td></tr>
 <tr><td>7.</td><td>Closest Numbers</td><td>https://www.hackerrank.com/challenges/closest-numbers/problem</td></tr>
-<tr><td>8.</td><td>Max Min</td><td>https://www.hackerrank.com/challenges/angry-children/problem</td></tr>
-<tr><td>9.</td><td>Candies</td><td>https://www.hackerrank.com/challenges/candies/problem</td></tr>
+<tr><td>8.</td><td>Max Min  __PG__</td><td>https://www.hackerrank.com/challenges/angry-children/problem</td></tr>
+<tr><td>9.</td><td>Candies __PG__</td><td>https://www.hackerrank.com/challenges/candies/problem</td></tr>
 <tr><td>10.</td><td>Pairs</td><td>https://www.hackerrank.com/challenges/pairs/problem</td></tr>
 <tr><td>11.</td><td>Minimum Distances</td><td>https://www.hackerrank.com/challenges/minimum-distances/problem</td></tr>
 <tr><td>12.</td><td>Migratory Birds</td><td>https://www.hackerrank.com/challenges/migratory-birds/problem</td></tr>
 <tr><td>13.</td><td>Marc's Cakewalk</td><td>https://hackerrank.com/challenges/marcs-cakewalk/problem</td></tr>
 <tr><td>14.</td><td>Counting Sort 1</td><td>https://www.hackerrank.com/challenges/countingsort1/problem</td></tr>
-<tr><td>15.</td><td>Maximum Palindromes</td><td>https://www.hackerrank.com/challenges/maximum-palindromes/problem</td></tr>
+<tr><td>15.</td><td>Maximum Palindromes  __PG__</td><td>https://www.hackerrank.com/challenges/maximum-palindromes/problem</td></tr>
 <tr><td>16.</td><td>ACM ICPC Team</td><td>https://www.hackerrank.com/challenges/acm-icpc-team/problem</td></tr>
 <tr><td>17.</td><td>Cut the sticks</td><td>https://www.hackerrank.com/challenges/cut-the-sticks/problem</td></tr>
 <tr><td>18.</td><td>Equalize the Array</td><td>https://www.hackerrank.com/challenges/equality-in-a-array/problem</td></tr>
