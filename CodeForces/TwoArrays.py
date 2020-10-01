@@ -1,11 +1,11 @@
 def process():
-    n, T = list(int, input().split())
+    n, T = list(map(int, input().split()))
     l = list(map(int, input().split()))
 
     if T%2 :
         T = T//2
         for i in l:
-            if T<=i:
+            if i<=T:
                 print(0, end=' ')
             else :
                 print(1, end=' ')
@@ -23,11 +23,11 @@ def process():
                     flag = 1
                 else:
                     flag = 0
-
+    print()
 
 def main():
     for i in range(int(input())):
         process()
 
-if __name__='__main__':
+if __name__=='__main__':
     main()
