@@ -80,4 +80,7 @@
 <tr>
 <td>25.</td><td>Two Arrays</td><td>https://codeforces.com/problemset/problem/1417/B</td>
 </tr>
+<tr>
+<td>26.</td><td>Minimum Product</td><td>https://codeforces.com/problemset/problem/1409/B</td>
+</tr>
 </table>
