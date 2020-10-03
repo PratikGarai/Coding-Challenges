@@ -25,3 +25,4 @@
 <tr><td>18.</td><td>Equalize the Array</td><td>https://www.hackerrank.com/challenges/equality-in-a-array/problem</td></tr>
 <tr><td>19.</td><td>Counting Sort 2</td><td>https://www.hackerrank.com/challenges/countingsort2/problem</td></tr>
 <tr><td>20.</td><td>Non-Divisible Subset</td><td>https://www.hackerrank.com/challenges/non-divisible-subset/problem</td></tr>
+<tr><td>21.</td><td>Forming A Magic Square</td><td>https://www.hackerrank.com/challenges/magic-square-forming/problem</td></tr>
