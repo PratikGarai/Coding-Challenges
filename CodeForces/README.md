@@ -86,4 +86,7 @@
 <tr>
 <td>27.</td><td>Mortal Kombat Tower (Incomplete) </td><td>https://codeforces.com/problemset/problem/1418/C</td>
 </tr>
+<tr>
+<td>28.</td><td>Nice Matrix</td><td>https://codeforces.com/problemset/problem/1422/B</td>
+</tr>
 </table>
