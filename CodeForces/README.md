@@ -84,6 +84,6 @@
 <td>26.</td><td>Minimum Product</td><td>https://codeforces.com/problemset/problem/1409/B</td>
 </tr>
 <tr>
-<td>27.</td><td>Mortal Kombat Tower</td><td>https://codeforces.com/problemset/problem/1418/C</td>
+<td>27.</td><td>Mortal Kombat Tower (Incomplete) </td><td>https://codeforces.com/problemset/problem/1418/C</td>
 </tr>
 </table>
