@@ -1,14 +1,9 @@
 def process():
     n = int(input())
     coins = 0
+    t = True
     while(n>0):
-        if n%2==1:
-            coins += 1
-            n = (n-1)>>1
-        else :
-            n = n>>1
-            coins += n
-            n -= 1
+
     print(coins)
 
 def main():
