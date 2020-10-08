@@ -90,6 +90,6 @@
 <td>28.</td><td>Nice Matrix</td><td>https://codeforces.com/problemset/problem/1422/B</td>
 </tr>
 <tr>
-<td>29.</td><td>Arena of Greed (Incomplete)</td><td>https://codeforces.com/problemset/problem/1425/A</td>
+<td>29.</td><td>Arena of Greed</td><td>https://codeforces.com/problemset/problem/1425/A</td>
 </tr>
 </table>

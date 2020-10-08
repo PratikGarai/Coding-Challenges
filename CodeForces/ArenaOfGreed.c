@@ -1,39 +1,22 @@
 #include<stdio.h>
+
+long long int solve(long long int n) {
+	if (n<5)
+		return (1>n-1)?1:n-1;
+	if (n%2||(n%4==0))
+		return (n-solve(n-1));
+	return (n-solve(n/2));
+}
+
 int main()
 {
-	int t, i, n, turn, coins;
+	int t, i, turn, coins;
+	long long int n;
 	scanf("%d", &t);
 	for(i=0;i<t;i++)
 	{
-		scanf("%d", &n);
-		turn = 1;
-		coins = 0;
-		while(n>0)
-		{
-			if(turn)
-			{
-				if((n%4==0&&n>=8)||n%2==1)
-				{
-					coins+=1;
-					n--;
-				}
-				else
-				{
-					coins+=n/2;
-					n=n/2;
-				}
-				turn = 0;
-			}
-			else
-			{
-				if(n%2==0)
-					n=n/2;
-				else
-					n--;
-				turn = 1;
-			}
-		}
-		printf("%d\n", coins);
+		scanf("%lli", &n);
+		printf("%lli\n", solve(n));
 	}
 	return 0;
 }
