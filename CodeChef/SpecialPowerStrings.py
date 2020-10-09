@@ -1,5 +1,3 @@
-import time 
-
 def make_dict(string):
     d  = {}
     for i in range(97,123):
@@ -44,20 +42,15 @@ def compute(s1,s2,hx,qm,ex):
         return -1
 
 def main():
-    s1 = input()
-    s2 = input()
-    hx = input()
-    qm = input()
-    ex = input()
-    a = time.time()
-    res = compute(s1,s2,hx,qm,ex)
-    if res==-1 :
-        print('Not possible')
-    else :
-        print(res)
-    b = time.time()
-    print()
-    print('Computation time : ',(b-a))
-
-if __name__=='__main__':
-    main()
+    for i in range(int(input())):
+        s1 = input()
+        s2 = input()
+        hx = input()
+        qm = input()
+        ex = input()
+        res = compute(s1,s2,hx,qm,ex)
+        if res==-1 :
+            print('Not possible')
+        else :
+            print(res)
+main()
