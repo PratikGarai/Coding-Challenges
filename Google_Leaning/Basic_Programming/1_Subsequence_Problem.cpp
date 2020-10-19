@@ -16,7 +16,7 @@ int calculate(int l, int l_s)
 		index[i] = 0;
 	for(i=0;i<l_s;i++)
 	{
-		for(j=0;l<l;j++)
+		for(j=0;j<l;j++)
 		{
 			if(index[j]<lengths[j])
 			{
@@ -28,11 +28,11 @@ int calculate(int l, int l_s)
 	
 	for(i=0;i<l;i++)
 	{
-		if(index[j]==max_len)
+		if(index[i]==max_len && index[i]==lengths[i])
 			n_max++;
-		else if(index[l]>max_len)
+		else if(index[i]>max_len && index[i]==lengths[i])
 		{
-			max_len = index[l];
+			max_len = index[i];
 			n_max = 1;
 		}
 	}
@@ -62,7 +62,7 @@ int main()
 	/* for(i=0;i<l;i++) */
 	/* 	cout<<i+1<<"th word : "<<D[i]<<endl; */
 
-	cout<<calculate(l, l_s);
+	cout<<"\nNumber of max length substrings : "<<calculate(l, l_s)<<endl;
 
 	return 0;
 }
