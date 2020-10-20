@@ -92,4 +92,7 @@
 <tr>
 <td>29.</td><td>Arena of Greed</td><td>https://codeforces.com/problemset/problem/1425/A</td>
 </tr>
+<tr>
+<td>30.</td><td>Barrels</td><td>https://codeforces.com/problemset/problem/1430/B</td>
+</tr>
 </table>
