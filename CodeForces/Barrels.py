@@ -4,18 +4,9 @@ def process():
     
     if(k>n-1):
        k = n-1
-    l_sum = sum(arr[0:k+1])
-    g_sum = l_sum
-    l_ind, h_ind = 0, k+1
+    arr = sorted(arr, reverse = True)
     
-    while(h_ind<n):
-        l_sum += arr[h_ind]-arr[l_ind]
-        if(l_sum>g_sum):
-            g_sum = l_sum
-        l_ind += 1
-        h_ind += 1
-
-    print(g_sum)
+    print(sum(arr[0:k+1]))
 
 
 def main():
