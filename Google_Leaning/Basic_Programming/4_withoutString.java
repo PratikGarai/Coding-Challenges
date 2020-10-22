@@ -13,7 +13,7 @@ public String withoutString(String base, String remove)
     if(!tracking)
     {
       if(Character.toUpperCase(base.charAt(i))==Character.toUpperCase(remove.charAt(0)))
-       {
+      {
         tracking = true;
         t += remove.charAt(tr_index);
         tr_index++;
@@ -40,10 +40,14 @@ public String withoutString(String base, String remove)
       else
       {
         tr_index=0;
-        s += t;
+        s += t+base.charAt(i);
         tracking = false;
       }
     }
+  }
+  if(tracking&&tr_index!=lr)
+  {
+    s += base.charAt(lr-1);
   }
   return s;
 }
