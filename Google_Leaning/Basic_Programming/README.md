@@ -15,4 +15,7 @@
 <tr>
 <td>4.</td><td>Without String</td><td>https://codingbat.com/prob/p192570</td>
 </tr>
+<tr>
+<td>5.</td><td>Sum Numbers</td><td>https://codingbat.com/prob/p121193</td>
+</tr>
 </table>
