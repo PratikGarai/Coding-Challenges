@@ -21,4 +21,7 @@
 <tr>
 <td>6.</td><td>Sum Numbers</td><td>https://codingbat.com/prob/p158767</td>
 </tr>
+<tr>
+<td>7.</td><td>Sum Numbers</td><td>https://codingbat.com/prob/p148813</td>
+</tr>
 </table>
