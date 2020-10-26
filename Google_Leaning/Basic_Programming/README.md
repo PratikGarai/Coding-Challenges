@@ -28,6 +28,9 @@
 <td>8.</td><td>Sort Array</td><td>https://codingbat.com/prob/p262890</td>
 </tr>
 <tr>
-<td>9.</td><td>Simple Interpreter</td><td>https://codingbat.com/prob/p294185</td>
+<td>9.</td><td>Simple Interpreter (Java) </td><td>https://codingbat.com/prob/p294185</td>
+</tr>
+<tr>
+<td>10.</td><td>Simple Interpreter (Python) </td><td>https://codingbat.com/prob/p234011</td>
 </tr>
 </table>
