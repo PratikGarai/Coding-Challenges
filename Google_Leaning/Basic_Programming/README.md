@@ -36,4 +36,7 @@
 <tr>
 <td>11.</td><td>Word Zero Problem</td><td>https://codingbat.com/prob/p152303</td>
 </tr>
+<tr>
+<td>12.</td><td>Word Length Problem</td><td>https://codingbat.com/prob/p125327</td>
+</tr>
 </table>
