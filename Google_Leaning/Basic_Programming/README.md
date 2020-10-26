@@ -27,4 +27,7 @@
 <tr>
 <td>8.</td><td>Sort Array</td><td>https://codingbat.com/prob/p262890</td>
 </tr>
+<tr>
+<td>9.</td><td>Simple Interpreter</td><td>https://codingbat.com/prob/p294185</td>
+</tr>
 </table>
