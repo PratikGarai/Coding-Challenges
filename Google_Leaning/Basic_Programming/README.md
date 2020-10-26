@@ -33,4 +33,7 @@
 <tr>
 <td>10.</td><td>Simple Interpreter (Python) </td><td>https://codingbat.com/prob/p234011</td>
 </tr>
+<tr>
+<td>11.</td><td>Word Zero Problem</td><td>https://codingbat.com/prob/p152303</td>
+</tr>
 </table>
