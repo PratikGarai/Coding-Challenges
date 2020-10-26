@@ -39,4 +39,7 @@
 <tr>
 <td>12.</td><td>Word Length Problem</td><td>https://codingbat.com/prob/p125327</td>
 </tr>
+<tr>
+<td>13.</td><td>Word Pairs Problem</td><td>https://codingbat.com/prob/p126332</td>
+</tr>
 </table>
