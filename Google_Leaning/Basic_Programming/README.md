@@ -45,4 +45,7 @@
 <tr>
 <td>14.</td><td>Word Count Problem</td><td>https://codingbat.com/prob/p117630</td>
 </tr>
+<tr>
+<td>15.</td><td>Encoder Problem</td><td>https://codingbat.com/prob/p238573</td>
+</tr>
 </table>
