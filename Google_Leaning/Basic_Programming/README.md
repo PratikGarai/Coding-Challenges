@@ -48,4 +48,7 @@
 <tr>
 <td>15.</td><td>Encoder Problem</td><td>https://codingbat.com/prob/p238573</td>
 </tr>
+<tr>
+<td>16.</td><td>BlackJack</td><td>https://codingbat.com/prob/p117019</td>
+</tr>
 </table>
