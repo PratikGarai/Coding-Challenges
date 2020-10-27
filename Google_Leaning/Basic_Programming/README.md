@@ -51,4 +51,7 @@
 <tr>
 <td>16.</td><td>BlackJack</td><td>https://codingbat.com/prob/p117019</td>
 </tr>
+<tr>
+<td>17.</td><td>Evenly Spaced</td><td>https://codingbat.com/prob/p198700</td>
+</tr>
 </table>
