@@ -58,3 +58,5 @@
 <td>18.</td><td>Collapse Duplicates</td><td>https://codingbat.com/prob/p256268</td>
 </tr>
 </table>
+
+That's all for now...
