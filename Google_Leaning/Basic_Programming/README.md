@@ -54,4 +54,7 @@
 <tr>
 <td>17.</td><td>Evenly Spaced</td><td>https://codingbat.com/prob/p198700</td>
 </tr>
+<tr>
+<td>18.</td><td>Collapse Duplicates</td><td>https://codingbat.com/prob/p256268</td>
+</tr>
 </table>
