@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Map;
 import java.util.HashMap;
 
-class Word_Zero
+class Word_Len
 {
 	public Map<String, Integer> word0(String[] strings) 
 	{
@@ -14,7 +14,7 @@ class Word_Zero
 
 	public static void main(String[] args)
 	{
-		Word_Zero ob = new Word_Zero();
+		Word_Len ob = new Word_Len();
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter the number of elements : ");
 		int n = in.nextInt();
