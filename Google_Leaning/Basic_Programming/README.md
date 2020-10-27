@@ -42,4 +42,7 @@
 <tr>
 <td>13.</td><td>Word Pairs Problem</td><td>https://codingbat.com/prob/p126332</td>
 </tr>
+<tr>
+<td>14.</td><td>Word Count Problem</td><td>https://codingbat.com/prob/p117630</td>
+</tr>
 </table>
