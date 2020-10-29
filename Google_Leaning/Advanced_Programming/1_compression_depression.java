@@ -12,27 +12,35 @@ class Compression_Depression
 	{
 		if(l-f<1)
 			return "";
-		if(!Character.isDigit(a.charAt(f)))
-			return a.substring(f,l);
-		String s = "";
-		int ind = f;
-		while(ind != l)
+		if(l-f==1)
+			return String.valueOf(a.charAt(f));
+		String s="", sub="";
+		int ind = f, n=0,fb=f;
+		boolean tracking = false;
+		while(ind!=l)
 		{
-			int n = 0, fb, lb;
-			while(a.charAt(ind)!='[' && ind!=l)
+			if(Character.isDigit(a.charAt(ind)))
+				n = n*10 + a.charAt(ind) - '0';
+			else if(a.charAt(ind)=='[')
 			{
-				n = n*10 + (a.charAt(ind)-'0');
-				ind++;
+				tracking = true;
+				fb = ind+1;
 			}
-			fb = ind+1;
-			while(a.charAt(ind)!=']' && ind!=l)
-				ind++;
-			lb = ind;
+			else if(a.charAt(ind)==']' && tracking)
+			{
+				tracking = false;
+				String st = decompress(fb,ind);
+				System.out.println(fb+" "+ind+" "+st);
+				for(int i=0;i<n;i++)
+					s += st;				
+				n = 0;
+				fb = ind+1;
+			}	
+			else if(!tracking)
+				s += a.charAt(ind);
 			ind++;
-			String sub = decompress(fb,lb);
-			for(int i=0;i<n;i++)
-				s += sub;
 		}
+		
 		return s;
 	}
 
