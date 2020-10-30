@@ -10,38 +10,41 @@ class Compression_Depression
 
 	String decompress(int f, int l)
 	{
-		if(l-f<1)
+		if(f>l)
 			return "";
-		if(l-f==1)
-			return String.valueOf(a.charAt(f));
-		String s="", sub="";
-		int ind = f, n=0,fb=f;
-		boolean tracking = false;
-		while(ind!=l)
+		if(Character.isDigit(a.charAt(f)))
 		{
-			if(Character.isDigit(a.charAt(ind)))
-				n = n*10 + a.charAt(ind) - '0';
-			else if(a.charAt(ind)=='[')
+			String s = "";
+			int ind = f;
+			int n=0;
+			while(Character.isDigit(a.charAt(ind)))
 			{
-				tracking = true;
-				fb = ind+1;
+				n = n*10 + a.charAt(ind) -'0';
+				ind++;
 			}
-			else if(a.charAt(ind)==']' && tracking)
-			{
-				tracking = false;
-				String st = decompress(fb,ind);
-				System.out.println(fb+" "+ind+" "+st);
-				for(int i=0;i<n;i++)
-					s += st;				
-				n = 0;
-				fb = ind+1;
-			}	
-			else if(!tracking)
-				s += a.charAt(ind);
 			ind++;
+			int bractes = 1, begin = ind;
+			while(bractes!=0)
+			{
+				if(a.charAt(ind)=='[')
+					bractes++;
+				if(a.charAt(ind)==']')
+					bractes--;
+				ind++;
+			}
+			int end = ind-2;
+			System.out.println(begin+" "+end);
+			String st = decompress(begin, end);
+			System.out.println(st);
+			for(int i=0;i<n;i++)
+				s += st;
+			return s;
 		}
-		
-		return s;
+		else
+		{
+			return a.substring(f,l+1);
+		}
+
 	}
 
 	public static void main(String[] args)
@@ -51,6 +54,6 @@ class Compression_Depression
 		String a = in.next();
 		Compression_Depression ob = new Compression_Depression(a);
 
-		System.out.println("\nThe decompressed string is : "+ob.decompress(0,a.length()));
+		System.out.println("\nThe decompressed string is : "+ob.decompress(0,a.length()-1));
 	}
 }
