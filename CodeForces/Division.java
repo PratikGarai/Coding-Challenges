@@ -4,13 +4,25 @@ public class Division
 {
 	Scanner in = new Scanner(System.in);
 
-	int process()
+	long process()
 	{
-		int p = in.nextInt();
-		int q = in.nextInt();
+		long p = in.nextLong();
+		long q = in.nextLong();
 
 		if (q>p)
-			return q;
+			return p;
+		
+		if(p%q!=0)
+			return p;
+
+		long max = 1;
+		for(long i=1;i<=(long)(Math.ceil(Math.pow(p,0.5)));i++)
+		{
+			if(p%i==0 && i%q!=0)
+				max = i;
+		}
+
+		return max;
 
 	}
 
