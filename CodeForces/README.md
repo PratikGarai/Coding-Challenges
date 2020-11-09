@@ -95,4 +95,7 @@
 <tr>
 <td>30.</td><td>Barrels</td><td>https://codeforces.com/problemset/problem/1430/B</td>
 </tr>
+<tr>
+<td>31.</td><td>Array Rearrangement</td><td>https://codeforces.com/problemset/problem/1445/A</td>
+</tr>
 </table>
