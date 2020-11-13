@@ -12,3 +12,23 @@ class Solution:
             chars[ord(s[j])] = j
         
         return max_len
+
+
+===========================================================================================
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        
+        d = {}
+        max_len = 0
+        curr_len = 0
+        beg = 0
+        
+        for ind,i in enumerate(s) :
+            if i in d:
+                beg = max(beg,d[i]+1)
+            d[i] = ind
+            curr_len = ind-beg+1
+            if(curr_len>max_len):
+                max_len = curr_len
+        return max_len
