@@ -1,0 +1,11 @@
+class Solution:
+    def flipAndInvertImage(self, A: List[List[int]]) -> List[List[int]]:
+        for ind,i in enumerate(A) :
+            A[ind] = i[::-1]
+        for ind1,i in enumerate(A):
+            for ind2,j in enumerate(i):
+                if j==0:
+                    A[ind1][ind2] = 1
+                else:
+                    A[ind1][ind2] = 0
+        return A
