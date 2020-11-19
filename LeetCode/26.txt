@@ -1,0 +1,17 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int l = nums.length;
+        if(l==0)
+            return 0;
+        int low = 1, last=nums[0];
+        for(int high : nums)
+        {
+            if(high!=last)
+            {
+                nums[low++] = high;
+                last = high;
+            }
+        }
+        return low;
+    }
+}
