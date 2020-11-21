@@ -1,0 +1,34 @@
+class Solution:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        carry = 0
+        curr1 = l1
+        curr2 = l2
+        l = None
+        curr = None
+        val1, val2 = 0,0
+        while not (curr1==None and curr2==None):
+            if curr1==None :
+                val1 = 0
+            else :
+                val1 = curr1.val
+                curr1 = curr1.next
+            if curr2==None :
+                val2 = 0
+            else :
+                val2 = curr2.val
+                curr2 = curr2.next
+            
+            sum = val1+val2+carry
+            carry = int(sum/10)
+            sum = sum%10
+            
+            if l==None:
+                l = ListNode(sum)
+                curr = l
+            else :
+                curr.next = ListNode(sum)
+                curr = curr.next
+        if carry!=0:
+            curr.next = ListNode(carry)
+            
+        return l
