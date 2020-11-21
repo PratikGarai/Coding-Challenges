@@ -1,0 +1,21 @@
+permutation = None
+nums = None
+class Solution:
+    def permute(self, num: List[int]) -> List[List[int]]:
+        global nums
+        global permutation
+        nums = []
+        permutation = []
+        nums = num
+        l  = len(nums)-1      
+        fillPermutation(nums, 0, l)
+        return permutation
+    
+def fillPermutation(nums , l, r):
+    if(l==r):
+        permutation.append(nums.copy())
+    else :
+        for i in range(l, r+1):
+            nums[l], nums[i] = nums[i], nums[l]
+            fillPermutation(nums, l+1, r)
+            nums[l], nums[i] = nums[i], nums[l]
