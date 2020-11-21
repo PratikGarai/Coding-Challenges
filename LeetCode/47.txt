@@ -1,0 +1,30 @@
+nums = None
+permutation = None
+
+class Solution:
+    def permuteUnique(self, num: List[int]) -> List[List[int]]:
+        global nums
+        global permutation
+        nums = []
+        permutation = []
+        visit = set({})
+        nums = sorted(num)
+        l  = len(nums)-1      
+        fillPermutation(nums, 0, l)
+        return permutation
+    
+def fillPermutation(nums , l, r):
+    if(l==r):
+        permutation.append(nums.copy())
+    else :
+        for i in range(l, r+1):
+            swap = True
+            for j in nums[l:i]:
+                if j==nums[i]:
+                    swap = False
+            if not swap:
+                continue
+            if((i!=l and nums[i]!=nums[l]) or i==l):
+                nums[l], nums[i] = nums[i], nums[l]
+                fillPermutation(nums, l+1, r)
+                nums[l], nums[i] = nums[i], nums[l]
