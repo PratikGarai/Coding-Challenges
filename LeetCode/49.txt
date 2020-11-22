@@ -1,0 +1,19 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        
+        l = len(strs)
+        if l==1:
+            return [strs]
+        sorts = [""]*l
+        for ind,i in enumerate(strs) :
+            sorts[ind] = "".join(sorted([c for c in strs[ind]]))
+            
+        f = []
+        for i in set(sorts):
+            l = []
+            for j,w in enumerate(sorts):
+                if i==w:
+                    l.append(strs[j])
+            f.append(l)
+        
+        return f
