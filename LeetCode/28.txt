@@ -1,0 +1,22 @@
+class Solution:
+    def strStr(self, h: str, n: str) -> int:
+        
+        la = len(h)
+        lb = len(n)
+        
+        if lb>la:
+            return -1
+        if lb==la: 
+            if h==n:
+                return 0
+            else : 
+                return -1
+        
+        for i in range(0,la-lb+1):
+            for j in range(i,i+lb):
+                if h[j]!=n[j-i]:
+                    break
+            else:    
+                return i
+        
+        return -1
