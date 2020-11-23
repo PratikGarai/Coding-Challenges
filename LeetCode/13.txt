@@ -1,0 +1,29 @@
+d = {
+        ' ' : 0,
+        'I' : 1,
+        'V' : 5,
+        'X' : 10,
+        'L' : 50,
+        'C' : 100,
+        'D' : 500,
+        'M' : 1000
+     }
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        total = 0
+        ind = len(s)-1
+        last = ' '
+        curr = ' '
+        for i in s[::-1]:
+            
+            if(i!=curr):
+                last = curr
+                curr = i
+                
+            if(d[curr]<d[last]):
+                total -= d[curr]
+            else:
+                total += d[curr]
+            
+        return total
