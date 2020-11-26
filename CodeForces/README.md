@@ -104,4 +104,7 @@
 <tr>
 <td>33.</td><td>Special Permutation</td><td>https://codeforces.com/problemset/problem/1454/A</td>
 </tr>
+<tr>
+<td>34.</td><td>Unique Bid Auction</td><td>https://codeforces.com/problemset/problem/1454/B</td>
+</tr>
 </table>
