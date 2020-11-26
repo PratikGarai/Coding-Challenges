@@ -107,4 +107,7 @@
 <tr>
 <td>34.</td><td>Unique Bid Auction</td><td>https://codeforces.com/problemset/problem/1454/B</td>
 </tr>
+<tr>
+<td>35.</td><td>Robot Program</td><td>https://codeforces.com/problemset/problem/1452/A</td>
+</tr>
 </table>
