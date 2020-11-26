@@ -27,3 +27,5 @@
 <tr><td>20.</td><td>Non-Divisible Subset __KS__</td><td>https://www.hackerrank.com/challenges/non-divisible-subset/problem</td></tr>
 <tr><td>21.</td><td>Forming A Magic Square __KS__</td><td>https://www.hackerrank.com/challenges/magic-square-forming/problem</td></tr>
 <tr><td>22.</td><td>Bigger is Greater __KS__</td><td>https://www.hackerrank.com/challenges/bigger-is-greater/problem</td></tr>
+<tr><td>23.</td><td>Array Manipulation __PG__</td><td>https://www.hackerrank.com/challenges/crush/problem</td></tr>
+</table>
