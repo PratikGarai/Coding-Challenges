@@ -110,4 +110,7 @@
 <tr>
 <td>35.</td><td>Robot Program</td><td>https://codeforces.com/problemset/problem/1452/A</td>
 </tr>
+<tr>
+<td>36.</td><td>Sequence Transformation</td><td>https://codeforces.com/problemset/problem/1454/C</td>
+</tr>
 </table>
