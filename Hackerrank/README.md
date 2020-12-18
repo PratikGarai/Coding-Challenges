@@ -31,4 +31,5 @@
 <tr><td>24.</td><td>Sparse Arrays __PG__</td><td>https://www.hackerrank.com/challenges/sparse-arrays/problem</td></tr>
 <tr><td>25.</td><td>Arrays DS __PG__</td><td>https://www.hackerrank.com/challenges/arrays-ds/problem</td></tr>
 <tr><td>26.</td><td>Left Rotation __PG__</td><td>https://www.hackerrank.com/challenges/array-left-rotation/problem</td></tr>
+<tr><td>27.</td><td>Larry's Array __PG__</td><td>https://www.hackerrank.com/challenges/larrys-array/problem</td></tr>
 </table>
