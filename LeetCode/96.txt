@@ -1,0 +1,33 @@
+class Solution {
+    int[] t;
+    public int numTrees(int n) {
+        if(n==0)
+            return 0;
+        t = new int[n+1];
+        for(int i=0;i<n+1;i++)
+        {
+            t[i] = -1;
+        }
+        
+        t[0] = 1;
+        t[1] = 1;
+        
+        return getNumber(n);
+    }
+    
+    public int getNumber(int n)
+    {
+        if(t[n]!=-1)
+            return t[n];
+        else
+        {
+            int s = 0;
+            for(int i=1;i<=n;i++)
+            {
+                s += getNumber(n-i)*getNumber(i-1);
+            }
+            t[n] = s;
+            return t[n];
+        }
+    }
+}
