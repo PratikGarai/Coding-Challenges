@@ -1,0 +1,37 @@
+class Solution:
+    def cloneGraph(self, node: 'Node') -> 'Node':
+        
+        if node==None:
+            return None
+        
+        ls1 = []
+        ls2 = []
+        head = Node(node.val)
+        ls1.append(node)
+        ls2.append(head)
+        
+        visited = set({})
+        nodes = {}
+        nodes[head.val] = head
+        #visited.add(head.val)
+        
+        while(ls1!=[]):
+            v1 = ls1.pop(0)
+            v2 = ls2.pop(0)
+            
+            if(v2.val in visited):
+                continue
+            
+            visited.add(v2.val)
+            
+            for i in v1.neighbors :
+                try :
+                    v2.neighbors.append(nodes[i.val])
+                except:
+                    n = Node(i.val)
+                    nodes[i.val] = n
+                    v2.neighbors.append(n)
+            ls1.extend(v1.neighbors)
+            ls2.extend(v2.neighbors)
+            
+        return head
