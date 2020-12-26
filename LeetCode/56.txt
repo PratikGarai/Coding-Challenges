@@ -1,0 +1,24 @@
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        
+        intervals = sorted(intervals)
+        if intervals==[]:
+            return []
+        
+        ls = []
+        
+        s = intervals[0][0]
+        e = intervals[0][1]
+        
+        for i in intervals[1:]:
+            if s<=i[0] and e>=i[1]:
+                continue
+            elif i[1]>=e and i[0]<=e:
+                e = i[1]
+            else:
+                ls.append([s,e])
+                s = i[0]
+                e = i[1]
+        ls.append([s,e])
+        
+        return ls
