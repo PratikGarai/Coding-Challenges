@@ -1,0 +1,14 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        l = len(nums)
+        ls = []
+        for i in range(0, 2**l):
+            b = str(int(bin(i)[2:]))
+            b = (l-len(b))*'0' + b
+            k = []
+            for j in range(l):
+                if b[j]=='1':
+                    k.append(nums[j])
+            ls.append(k)
+        
+        return ls
