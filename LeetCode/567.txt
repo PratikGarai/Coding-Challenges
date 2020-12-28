@@ -1,0 +1,36 @@
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        
+        l1 = len(s1)
+        l2 = len(s2)
+        
+        if(l1>l2):
+            return False
+        
+        d1 = [0 for _ in range(26)]
+        d2 = [0 for _ in range(26)]
+        for i in s1:
+            d1[ord(i)-97] += 1
+        
+        for i in s2[:l1]:
+            d2[ord(i)-97] += 1
+        
+        res = self.compare(d1, d2)
+        if res:
+            return True
+        
+        for i in range(l1, l2):
+            d2[ord(s2[i])-97] += 1
+            d2[ord(s2[i-l1])-97] -= 1
+            res = self.compare(d1, d2)
+            if res:
+                return True
+        
+        return False
+        
+    
+    def compare(self, l1, l2):
+        for i in range(26):
+            if(l2[i]!=l1[i]):
+                return False
+        return True
