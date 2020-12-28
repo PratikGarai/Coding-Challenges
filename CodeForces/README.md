@@ -114,6 +114,6 @@
 <td>36.</td><td>Sequence Transformation</td><td>https://codeforces.com/problemset/problem/1454/C</td>
 </tr>
 <tr>
-<td>37.</td><td>Busy Robot</td><td>https://codeforces.com/problemset/problem/1463/C</td>
+<td>37.</td><td>In-Game Chat</td><td>https://codeforces.com/problemset/problem/1465/A</td>
 </tr>
 </table>
