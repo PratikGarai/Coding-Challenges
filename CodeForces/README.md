@@ -116,4 +116,7 @@
 <tr>
 <td>37.</td><td>In-Game Chat</td><td>https://codeforces.com/problemset/problem/1465/A</td>
 </tr>
+<tr>
+<td>38.</td><td>Fair Numbers</td><td>https://codeforces.com/problemset/problem/1465/B</td>
+</tr>
 </table>
