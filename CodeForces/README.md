@@ -119,4 +119,7 @@
 <tr>
 <td>38.</td><td>Fair Numbers</td><td>https://codeforces.com/problemset/problem/1465/B</td>
 </tr>
+<tr>
+<td>39.</td><td>Peaceful Rooks</td><td>https://codeforces.com/problemset/problem/1465/C</td>
+</tr>
 </table>
