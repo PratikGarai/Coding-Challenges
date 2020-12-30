@@ -1,0 +1,10 @@
+class Solution:
+    def hasAlternatingBits(self, n: int) -> bool:
+        
+        last = ""
+        for i in bin(n)[2:]:
+            if i==last :
+                return False
+            else:
+                last = i
+        return True
