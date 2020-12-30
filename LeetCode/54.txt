@@ -29,3 +29,47 @@ class Solution:
         
         
         return l
+
+
+====================   Another Approach   =====================
+
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+    
+        y = 0
+        x = 0
+        ly = len(matrix)
+        lx = len(matrix[0])
+        dy = [0,1,0,-1]
+        dx = [1,0,-1,0]
+        l = []
+        direction = 0
+        
+        nx = 0
+        ny = 0
+        
+        max_elements = lx*ly
+        count = 0
+        
+        while(count<max_elements):
+            #print(y,x,direction)
+            l.append(matrix[y][x])
+            count += 1
+            matrix[y][x] = -1000
+            
+            nx = x+dx[direction]
+            ny = y+dy[direction]
+            
+            if nx<0 or nx>=lx or ny<0 or ny>=ly:
+                direction = (direction+1)%4
+                nx = x+dx[direction]
+                ny = y+dy[direction]
+            elif matrix[ny][nx]==-1000:
+                direction = (direction+1)%4
+                nx = x+dx[direction]
+                ny = y+dy[direction]
+            
+            x = nx
+            y = ny
+        
+        return l
