@@ -1,0 +1,15 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        nums = sorted(nums)
+        l = len(nums)
+        
+        for i in range(1,l-1):
+            if nums[i]!=nums[i-1] and nums[i]!=nums[i+1]:
+                return nums[i]
+        
+        if l==1:
+            return nums[0]
+        if nums[0]!=nums[1]:
+            return nums[0]
+        if nums[l-1]!=nums[l-2]:
+            return nums[l-1]
