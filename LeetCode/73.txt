@@ -1,0 +1,19 @@
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        
+        m = len(matrix)
+        n = len(matrix[0])
+        
+        ms = [False for i in range(m)]
+        ns = [False for i in range(n)]
+        
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j]==0:
+                    ms[i] = True
+                    ns[j] = True
+        
+        for i in range(m):
+            for j in range(n):
+                if ms[i] or ns[j]:
+                    matrix[i][j] = 0
