@@ -11,3 +11,26 @@ class Solution:
             if d[i]>t:
                     return i
         return nums[0]
+
+
+
+=========================   FASTER APPROACH   ======================
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        nums = sorted(nums)
+        t = len(nums)//2
+        
+        last = nums[0]
+        count = 0
+        
+        for i in nums:
+            if i==last :
+                count += 1
+                if count>t:
+                    return last
+            else :
+                last = i
+                count = 1
+        
+        return last
