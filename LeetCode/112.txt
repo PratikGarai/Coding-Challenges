@@ -1,0 +1,16 @@
+class Solution:
+    def hasPathSum(self, root: TreeNode, sum: int) -> bool:
+        
+        if root==None :
+            return False
+        
+        if sum-root.val==0 and root.left==None and root.right==None:
+            return True
+        
+        if self.hasPathSum(root.left, sum-root.val):
+                return True
+        
+        if self.hasPathSum(root.right, sum-root.val):
+                return True
+        
+        return False
