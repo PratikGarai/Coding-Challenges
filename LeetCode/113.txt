@@ -1,0 +1,17 @@
+class Solution:
+    
+    
+    def pathSum(self, root: TreeNode, sum: int) -> List[List[int]]:
+        self.paths = []
+        self.hasPathSum(root, sum, [])
+        return self.paths
+        
+        
+    def hasPathSum(self, root, sum, path):
+        if root==None :
+            return
+        if sum-root.val==0 and root.left==None and root.right==None:
+            self.paths.append(path + [root.val])
+            return
+        self.hasPathSum(root.left, sum-root.val, path + [root.val])
+        self.hasPathSum(root.right, sum-root.val, path + [root.val])
