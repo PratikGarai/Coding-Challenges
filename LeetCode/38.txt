@@ -1,0 +1,22 @@
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        s = "1"
+        for i in range(n-1):
+            s = self.getString(s)
+            #print(i, s)
+        return s
+    
+    
+    def getString(self, n):
+        count = 0
+        last = n[0]
+        s = ""
+        n += "z"
+        for i in n:
+            if i!=last:
+                s += str(count)+last
+                count = 1
+                last = i
+            else :
+                count += 1
+        return s
