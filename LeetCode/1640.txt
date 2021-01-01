@@ -1,0 +1,24 @@
+class Solution:
+    def canFormArray(self, arr: List[int], pieces: List[List[int]]) -> bool:
+        
+        ind = 0
+        l = len(arr)
+        f = False
+        
+        while(ind<l):
+            
+            f = False 
+            for i in pieces :
+                if arr[ind]==i[0]:
+                    f = True
+                    for j in i:
+                        if j==arr[ind]:
+                            ind += 1
+                        else:
+                            return False
+                    break
+            
+            if not f:
+                return False
+        
+        return True
