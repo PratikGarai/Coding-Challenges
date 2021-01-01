@@ -1,0 +1,17 @@
+class Solution:
+    
+    def climbStairs(self, n: int) -> int:
+        self.arr = [-1 for _ in range(46)]
+        self.arr[0] = 0
+        self.arr[1] = 1
+        self.arr[2] = 2
+        
+        return self.climb(n)
+        
+    
+    def climb(self, n):
+        if self.arr[n]!=-1:
+            return self.arr[n]
+        else :
+            self.arr[n] = self.climb(n-1)+self.climb(n-2)
+            return self.arr[n]
