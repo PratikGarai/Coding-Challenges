@@ -1,0 +1,20 @@
+class Solution:
+    def deleteDuplicates(self, head: ListNode) -> ListNode:
+        
+        if head==None:
+            return None
+        
+        start = head
+        end = head.next
+        
+        while(end!=None):
+            
+            if start.val==end.val:
+                end = end.next
+            else:
+                start.next = end
+                start = end
+                end = start.next
+        start.next = end
+        
+        return head
