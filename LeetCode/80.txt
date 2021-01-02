@@ -1,0 +1,24 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        
+        if nums==[]:
+            return []
+        
+        last = nums[0]
+        count = 0
+        ind = 0
+        
+        for i in nums :
+            if i==last and count<2:
+                nums[ind] = i
+                count += 1
+                ind += 1
+            elif i!=last :
+                last = i 
+                nums[ind] = i
+                count = 1
+                last = i
+                ind += 1
+            #print(last, count, ind)
+        
+        return ind
