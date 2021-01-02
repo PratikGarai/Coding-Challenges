@@ -1,0 +1,41 @@
+class Solution:
+    def minPathSum(self, grid: List[List[int]]) -> int:
+        
+        m = len(grid)
+        n = len(grid[0])
+        
+        visited = [ [False for i in range(n)] for j in range(m)]
+        distance = [ [1000000 for i in range(n)] for j in range(m)]
+        
+        dm = [0,0,1,-1]
+        dn = [-1,1,0,0]
+        
+        distance[0][0] = 0
+        q = [[0,0]]
+        while(q!=[]):
+            
+            v = q.pop(0)
+            if visited[v[0]][v[1]] :               # ===>  PART 1
+                continue
+            visited[v[0]][v[1]] = True
+            for i in range(4):
+                
+                nm = v[0]+dm[i]
+                nn = v[1]+dn[i]
+                
+                if nm>=0 and nm<m and nn>=0 and nn<n:
+                    if distance[nm][nn] > distance[v[0]][v[1]]+grid[v[0]][v[1]]:
+                        distance[nm][nn] = distance[v[0]][v[1]]+grid[v[0]][v[1]]
+                    if not visited[nm][nn] :               # ===>   PART 2
+                    #    continue
+                        q.append([nm,nn])
+        
+        #for i in distance:
+        #    for j in i :
+        #        if j==1000000:
+        #            print('-', end="\t")
+        #        else :
+        #            print(j, end="\t")
+        #    print()
+            
+        return distance[m-1][n-1]+grid[m-1][n-1]
