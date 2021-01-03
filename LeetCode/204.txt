@@ -47,3 +47,17 @@ class Solution:
         
         return count
                 
+=====================  FASTEST I MANAGED TO DO YET ====================
+
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        if n<=2:
+            return 0
+        l = [1 for i in range(n)]
+        l[2] = 1
+        l[0], l[1] = 0, 0
+        for i in range(2,n):       
+            for j in range(i**2, n, i):
+                l[j] = 0
+        
+        return sum(l)
