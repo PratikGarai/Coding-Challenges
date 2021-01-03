@@ -1,0 +1,25 @@
+class Solution:
+    def countArrangement(self, n: int) -> int:
+        self.n = n
+        self.visited = [False for i in range(n)]
+        self.d = [[] for i in range(n)]
+        for i in range(1, n+1):
+            for j in range(1, n+1):
+                if j%i==0 or i%j==0:
+                    self.d[i-1].append(j-1)
+        
+        self.count = 0
+        self.countF(0)
+        
+        return self.count
+        
+    def countF(self , num):
+        if num==self.n:
+            self.count += 1
+            return 
+        
+        for i in self.d[num]:
+            if not self.visited[i] : 
+                self.visited[i] = True
+                self.countF(num+1)
+                self.visited[i] = False
