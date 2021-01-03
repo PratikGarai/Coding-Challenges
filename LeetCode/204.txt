@@ -18,3 +18,32 @@ class Solution:
                 mul += 1
         
         return count
+
+
+===================  ALTERNATIVE SOLUTION  ========================
+
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        
+        if n<=2:
+            return 0
+        
+        count = 0
+        isPrime = True
+        l = []
+        
+        for i in range(2,n):
+            isPrime = True
+            max = (i**0.5)
+            for j in l:
+                if j>max:
+                    break
+                if i%j==0:
+                    isPrime = False
+                    break
+            if isPrime :
+                l.append(i)
+                count += 1
+        
+        return count
+                
