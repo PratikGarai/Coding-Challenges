@@ -1,0 +1,17 @@
+class Solution:
+    def reverseList(self, head: ListNode) -> ListNode:
+        
+        if not head :
+            return head
+        b = head
+        n = b.next
+        nn = None
+        head.next = None
+        
+        while(n):
+            
+            nn = n.next
+            n.next = b
+            n,b = nn,n
+        
+        return b
