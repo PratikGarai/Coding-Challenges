@@ -1,0 +1,22 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        
+        l1 = len(s)
+        l2 = len(t)
+        
+        if l1!=l2 :
+            return False
+        cap= set({})
+        
+        maps = {}
+        for i in range(l1):
+            try :
+                if maps[s[i]]!=t[i]:
+                    return False
+            except :
+                if t[i] in cap :
+                    return False
+                maps[s[i]] = t[i]
+                cap.add(t[i])
+        
+        return True
