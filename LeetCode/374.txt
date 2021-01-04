@@ -1,0 +1,18 @@
+class Solution:
+    def guessNumber(self, n: int) -> int:
+        
+        low = 1
+        high = n
+        
+        
+        while(True):
+            
+            r = guess((low+high)//2)
+            if r==0:
+                break
+            elif r==-1:
+                high = (low+high)//2 - 1
+            else:
+                low = (low+high)//2 + 1
+        
+        return (low+high)//2
