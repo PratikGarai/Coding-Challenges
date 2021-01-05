@@ -1,0 +1,29 @@
+class Solution:
+    def commonChars(self, words: List[str]) -> List[str]:
+        
+        bins = [ [0]*26 for i in words ]
+        #print(bins)
+        
+        l =  len(words)
+        
+        for i in range(l) :
+            for c in words[i]:
+                bins[i][ord(c)-97] += 1
+        
+        arr = []
+        
+        for i in range(26):
+            include = True
+            reps = [0 for i in range(l)]
+            for j in range(l):
+                if bins[j][i]==0:
+                    include = False
+                    break
+                else :
+                    reps[j] = bins[j][i]
+            
+            if include :
+                for k in range(min(reps)):
+                    arr.append(chr(97+i))
+        
+        return arr
