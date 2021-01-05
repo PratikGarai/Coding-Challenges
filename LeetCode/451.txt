@@ -1,0 +1,19 @@
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        
+        l = [[0,i] for i in range(256)]
+        
+        for i in s:
+            l[ord(i)][0] += 1      
+        
+        l = sorted(l, key=lambda x : (-x[0], x[1]))
+        s = ""
+        
+        for i in l :
+            if i[0]==0:
+                break
+            else :
+                for  j in range(i[0]):
+                    s += chr(i[1])
+        
+        return s
