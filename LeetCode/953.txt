@@ -1,0 +1,26 @@
+class Solution:
+    def isAlienSorted(self, words: List[str], order: str) -> bool:
+        
+        d = {}
+        for ind,i in enumerate(order) :
+            d[i] = ind
+            
+        l = len(words)
+        ls = [len(i) for i in words]
+        
+        for i in range(l-1):
+            valid = False
+            for j in range(min(ls[i], ls[i+1])):
+                if d[words[i][j]]<d[words[i+1][j]]:
+                    valid = True
+                    break
+                elif d[words[i][j]]==d[words[i+1][j]]:
+                    continue
+                else :
+                    return False
+            
+            if not valid :
+                if ls[i+1]<ls[i]:
+                    return False
+        
+        return True
