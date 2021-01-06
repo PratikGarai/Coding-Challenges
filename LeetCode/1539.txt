@@ -1,0 +1,22 @@
+class Solution:
+    def findKthPositive(self, arr: List[int], k: int) -> int:
+        
+        l = len(arr)
+        
+        last = arr[0]
+        if(last>k):
+            return k
+        
+        k -= last-1
+        ind = 0
+        while(k>0 and ind<l-1):
+            diff = arr[ind+1]-arr[ind]
+            if diff==1:
+                ind += 1
+            elif diff>k :
+                return arr[ind]+k
+            else :
+                k -= diff-1
+                ind += 1
+        
+        return arr[l-1]+k
