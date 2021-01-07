@@ -1,0 +1,10 @@
+class Solution:
+    def trailingZeroes(self, n: int) -> int:
+        
+        factor = 5
+        z = 0
+        while(factor<=n):
+            z += n//factor
+            factor *= 5
+        
+        return z
