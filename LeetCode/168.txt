@@ -1,0 +1,10 @@
+class Solution:
+    def convertToTitle(self, n: int) -> str:
+        
+        s = ""
+        while(n>0):
+            
+            s = chr(65+(n-1)%26)+s
+            n = (n-1)//26
+        
+        return s
