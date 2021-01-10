@@ -1,0 +1,14 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        
+        d1 = [0 for i in range(26)]
+        d2 = [0 for i in range(26)]
+        
+        for i in s :
+            d1[ord(i)-97] += 1
+        for i in t :
+            d2[ord(i)-97] += 1
+        
+        for i in range(26):
+            if d1[i]!=d2[i]:
+                return chr(i+97)
