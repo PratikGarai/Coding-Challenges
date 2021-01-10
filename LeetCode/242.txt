@@ -1,0 +1,20 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        
+        l1 = len(s)
+        l2 = len(t)
+        
+        if l1!=l2 :
+            return False
+        
+        d = [0 for i in range(26)]
+        
+        for i in range(l1):
+            d[ord(s[i])-97] += 1
+            d[ord(t[i])-97] -= 1
+        
+        for i in d :
+            if i!=0:
+                return False
+        
+        return True
