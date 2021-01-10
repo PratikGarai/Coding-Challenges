@@ -1,0 +1,32 @@
+class Solution:
+    def shortestCompletingWord(self, lp: str, words: List[str]) -> str:
+        
+        lp = lp.lower()
+        d = [0 for i in range(26)]
+        
+        for i in lp :
+            if ord(i) in range(97, 123):
+                d[ord(i)-97] += 1
+        
+        min_len = 20
+        ans = ""
+        
+        for i in words :
+            e = [0 for i in range(26)]
+            for ii in i:
+                e[ord(ii)-97] += 1
+            
+            valid = True
+            for ii in range(26):
+                if d[ii]>e[ii]:
+                    valid  = False
+                    break
+            
+            if valid :
+                #print(i)
+                l = len(i)
+                if l<min_len:
+                    min_len = l
+                    ans = i
+        
+        return ans  
