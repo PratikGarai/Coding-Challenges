@@ -1,0 +1,19 @@
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        l = len(s)
+        d = [0 for i in range(26)]
+        occ = [-1 for i in range(26)]
+        for i in range(l) :
+            d[ord(s[i])-97] += 1
+            occ[ord(s[i])-97] = i
+        
+        a = -1
+        for i in range(26):
+            if d[i]==1:
+                if a==-1:
+                    a = occ[i]
+                else :
+                    a = min(occ[i], a)
+        
+        return a
+            
