@@ -1,0 +1,21 @@
+class Solution:
+    def minMoves2(self, nums: List[int]) -> int:
+        
+        l = len(nums)
+        nums = sorted(nums)
+        
+        med = 0
+        med = nums[l//2]
+        if l%2==0 :
+            med += nums[(l//2)-1]
+            med = med/2
+            if med%1>0.5 :
+                med += 1
+            med = int(med)
+        
+        
+        diff = 0
+        for i in nums :
+            diff += abs(i-med)
+        
+        return diff
