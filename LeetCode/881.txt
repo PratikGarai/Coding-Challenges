@@ -1,0 +1,23 @@
+class Solution:
+    def numRescueBoats(self, p: List[int], n: int) -> int:
+        
+        l = len(p)
+        if l==1 :
+            return 1
+        p = sorted(p)
+        left = 0
+        right = l-1
+        
+        boats = 0
+        while(left<=right):
+            limit = n
+            if(limit>=p[right] and right>=left):
+                limit -= p[right]
+                right -= 1
+            if(limit>=p[left] and right>=left):
+                limit -= p[left]
+                left += 1
+            #print(left,right)
+            boats += 1
+        
+        return boats
