@@ -33,4 +33,5 @@
 <tr><td>26.</td><td>Left Rotation __PG__</td><td>https://www.hackerrank.com/challenges/array-left-rotation/problem</td></tr>
 <tr><td>27.</td><td>Larry's Array __PG__</td><td>https://www.hackerrank.com/challenges/larrys-array/problem</td></tr>
 <tr><td>28.</td><td>3D Surface Area __PG__</td><td>https://www.hackerrank.com/challenges/3d-surface-area/problem</td></tr>
+<tr><td>29.</td><td>Balanced Brackets __PG__</td><td>https://www.hackerrank.com/challenges/balanced-brackets/problem</td></tr>
 </table>
