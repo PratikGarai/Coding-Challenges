@@ -1,0 +1,39 @@
+class Solution:
+    def minOperations(self, nums: List[int], x: int) -> int:
+        
+        d1 = {}
+        d2 = {}
+        l= len(nums)
+        
+        s1 = 0
+        s2 = 0
+        
+        d1[0] = 0
+        d2[0] = 0
+        
+        for i in range(l):
+            s1 += nums[i]
+            s2 += nums[l-i-1]
+            
+            d1[s1] = i+1
+            d2[s2] = i+1
+        
+        #print(x)
+        #print(d1)
+        #print(d2)
+        
+        mint = l+1
+        for i in d1 :
+            if i<=x and x-i in d2 :
+                #print(d1[i],d2[x-i])
+                mint = min(mint, d1[i]+d2[x-i])
+        
+        for i in d2 :
+            if i<=x and x-i in d1 :
+                #print(d2[i],d1[x-i])
+                mint = min(mint, d2[i]+d1[x-i])
+        
+        if mint==l+1:
+            return -1
+        else :
+            return mint
