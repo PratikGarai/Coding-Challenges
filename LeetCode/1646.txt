@@ -1,0 +1,21 @@
+class Solution:
+    def getMaximumGenerated(self, n: int) -> int:
+        
+        self.arr = [-1 for i in range(n+1)]
+        for i in range(n+1):
+            self.arr[i] = self.g(i)
+        
+        return max(self.arr)
+    
+    def g(self, n):
+        
+        if self.arr[n]!=-1:
+            return self.arr[n]
+        
+        if n==0 :
+            return 0
+        if n==1:
+            return 1
+        if n%2==0:
+            return self.g(n//2)
+        return self.g((n-1)//2) + self.g(((n-1)//2)+1)
