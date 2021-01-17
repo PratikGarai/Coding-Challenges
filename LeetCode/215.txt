@@ -3,3 +3,32 @@ class Solution:
         
         nums = sorted(nums)
         return nums[-k]
+
+
+
+===================  COUNT SORT APPROACH  =======================
+
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        
+        l = len(nums)
+        
+        if l==1 :
+            return nums[0]
+        
+        mi = nums[0]
+        ma = nums[0]
+        for i in nums[1:]:
+            if i>ma :
+                ma = i
+            elif i<mi :
+                mi = i
+        
+        arr = [0 for i in range(ma-mi+1)]
+        for i in nums :
+            arr[i-mi] += 1
+        
+        for i in range(ma-mi, -1, -1):
+            if arr[i]>=k:
+                return mi+i
+            k -= arr[i]
