@@ -1,0 +1,15 @@
+class Solution:
+    def countVowelStrings(self, n: int) -> int:
+        
+        return self.count(0,0,n)
+    
+    def count(self, character, index, limit):
+        
+        if index==limit-1:
+            return 5-character
+        
+        else :
+            s = 0
+            for i in range(character, 5):
+                s += self.count(i, index+1, limit) 
+            return s
