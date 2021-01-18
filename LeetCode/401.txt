@@ -22,3 +22,40 @@ class Solution:
                         ls.append(str(h)+":"+str(m))
             
         return ls
+
+
+
+================  FASTER SOLUTION  ==================
+
+class Solution:
+    def readBinaryWatch(self, num: int) -> List[str]:
+        
+        ls = []
+        hb = []
+        mb = []
+        
+        for i in range(12):
+            b1 = 0
+            for j in bin(i)[2:]:
+                if j=='1':
+                    b1 += 1
+            hb.append(b1)
+        
+        for i in range(60):
+            b1 = 0
+            for j in bin(i)[2:]:
+                if j=='1':
+                    b1 += 1
+            mb.append(b1)
+        
+        for h in range(12):
+            if hb[h]>num: 
+                continue
+            for m in range(60):
+                if hb[h]+mb[m]==num :
+                    if m<10:
+                        ls.append(str(h)+":0"+str(m))
+                    else :
+                        ls.append(str(h)+":"+str(m))
+            
+        return ls
