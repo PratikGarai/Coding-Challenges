@@ -1,0 +1,21 @@
+class Solution:
+    def maximum69Number (self, num: int) -> int:
+        
+        num = str(num)
+        s = ""
+        ind = 0
+        l = len(num)
+        
+        while(ind<l and num[ind]=="9"):
+            s += num[ind]
+            ind += 1
+        
+        if ind<l:
+            s += "9"
+            ind += 1
+        
+        while(ind<l):
+            s += num[ind]
+            ind += 1
+        
+        return int(s)
