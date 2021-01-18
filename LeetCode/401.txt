@@ -1,0 +1,24 @@
+class Solution:
+    def readBinaryWatch(self, num: int) -> List[str]:
+        
+        ls = []
+        for h in range(12):
+            b1 = 0
+            for i in bin(h)[2:]:
+                if i=='1':
+                    b1 += 1
+            if b1>num: 
+                continue
+                
+            for m in range(60):
+                b2 = 0
+                for j in bin(m)[2:]:
+                    if j=='1':
+                        b2 += 1
+                if b1+b2==num :
+                    if m<10:
+                        ls.append(str(h)+":0"+str(m))
+                    else :
+                        ls.append(str(h)+":"+str(m))
+            
+        return ls
