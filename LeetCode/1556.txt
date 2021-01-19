@@ -1,0 +1,14 @@
+class Solution:
+    def thousandSeparator(self, n: int) -> str:
+        
+        n = str(n)
+        l = len(n)
+        s = ""
+        
+        for i in range(l):
+            if i%3==0 and i!=0:
+                s = n[l-1-i]+"."+s
+            else :
+                s = n[l-1-i]+s
+        
+        return s
