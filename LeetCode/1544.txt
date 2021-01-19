@@ -1,0 +1,35 @@
+class Solution:
+    def makeGood(self, s: str) -> str:
+        
+        l = len(s)
+        if l==1 :
+            return s
+        
+        last = s
+        it = 0
+        
+        while(True):
+            
+            it += 1
+            t = ""
+            ind = 0
+            l = len(last)
+            while(ind<l-1):
+                if abs(ord(last[ind])-ord(last[ind+1]))==32:
+                    ind += 2
+                else :
+                    t += last[ind] 
+                    ind += 1
+        
+            if ind!=l:
+                t = t+last[l-1]
+            
+            #print(last,it,t)
+            
+            if t==last and it==2:
+                break
+            elif t!=last :
+                last = t
+                it = 0
+        
+        return t
