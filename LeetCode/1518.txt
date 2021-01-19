@@ -1,0 +1,14 @@
+class Solution:
+    def numWaterBottles(self, n1: int, n2: int) -> int:
+        
+        new = 0
+        old = n1
+        d = n1
+        while(old>=n2):
+            new = old//n2
+            old = old%n2
+            
+            d += new
+            old += new
+        
+        return d
