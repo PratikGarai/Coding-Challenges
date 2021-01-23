@@ -1,0 +1,8 @@
+class Solution:
+    def minPartitions(self, n: str) -> int:
+        
+        mx = 0
+        for i in n :
+            mx = max(mx, ord(i))
+        
+        return mx-ord('0')
