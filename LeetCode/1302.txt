@@ -1,0 +1,26 @@
+class Solution:
+    def deepestLeavesSum(self, root: TreeNode) -> int:
+        
+        if root==None :
+            return 0
+        
+        self.deepest = 0
+        self.sum = 0
+        self.d(root, 0)
+        return self.sum
+    
+    
+    def d(self, node, depth):
+        
+        if depth==self.deepest :
+            self.sum += node.val
+        elif depth>self.deepest :
+            self.deepest = depth
+            self.sum = node.val
+        
+        if node.left:
+            self.d(node.left, depth+1)
+        
+        if node.right:
+            self.d(node.right, depth+1)
+        
