@@ -1,0 +1,17 @@
+class Solution:
+    def decompressRLElist(self, nums: List[int]) -> List[int]:
+        
+        l = len(nums)
+        ls = []
+        first = 0
+        second = 1
+        
+        while(first<l):
+            
+            for i in range(nums[first]):
+                ls.append(nums[second])
+            
+            first += 2
+            second += 2
+        
+        return ls
