@@ -1,0 +1,22 @@
+class Solution:
+    def kLengthApart(self, nums: List[int], k: int) -> bool:
+        
+        last = -1
+        l = len(nums)
+        ind = 0
+        while(ind<l):
+            if nums[ind]==1:
+                last = ind
+                ind += 1
+                break
+            ind += 1
+        
+        while(ind<l):
+            if nums[ind]==1:
+                if ind-last<=k:
+                    return False
+                else :
+                    last = ind
+            ind += 1
+        
+        return True
