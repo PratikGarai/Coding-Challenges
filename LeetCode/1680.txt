@@ -1,0 +1,22 @@
+class Solution:
+    def concatenatedBinary(self, target: int) -> int:
+        
+        s = 0
+        
+        n = 1
+        mul = 1
+        mod = 10**9+7
+        
+        while(True):
+            
+            if n==mul:
+                mul *= 2
+            if n>target :
+                break
+            s = (s*mul+n)
+            if s>mod :
+                s = s%mod
+            n += 1
+        
+        return s
+            
