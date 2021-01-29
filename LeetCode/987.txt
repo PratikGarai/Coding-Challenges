@@ -1,0 +1,34 @@
+class Solution:
+    def verticalTraversal(self, root: TreeNode) -> List[List[int]]:
+        
+        self.d = {}
+        self.mi = 0
+        self.ma = 0
+        
+        self.trav(root,0, 0)
+        
+        #print(self.d)
+        #print(self.mi, self.ma)
+        ls = []
+        for i in range(self.mi,self.ma+1):
+            ls1 = []
+            s = sorted(self.d[i])
+            for i in s:
+                ls1.append(i[1])
+            ls.append(ls1)
+        
+        return ls
+    
+    def trav(self, node, val, level):
+        if node==None:
+            return
+        
+        try:
+            self.d[val].append((level,node.val))
+        except :
+            self.d[val] = [(level,node.val)]
+        #print(node.val, val)
+        self.mi = min(self.mi,val)
+        self.ma = max(self.ma,val)
+        self.trav(node.left, val-1, level+1)
+        self.trav(node.right, val+1, level+1)
