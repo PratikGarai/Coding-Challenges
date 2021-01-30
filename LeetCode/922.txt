@@ -15,3 +15,22 @@ class Solution:
             res.append(odds[i])
             
         return res
+
+
+===============  Approach 2 ===============
+
+class Solution:
+    def sortArrayByParityII(self, nums: List[int]) -> List[int]:
+        
+        oi, ei = 1, 0
+        n = [i for i in nums]
+        for i in range(len(nums)):
+            
+            if nums[i]%2:
+                n[oi] = nums[i]
+                oi += 2
+            else :
+                n[ei] = nums[i]
+                ei += 2
+                
+        return n
