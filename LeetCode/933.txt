@@ -1,0 +1,21 @@
+class RecentCounter:
+
+    def __init__(self):
+        self.data = []
+        self.l = 0
+
+    def ping(self, t: int) -> int:
+        self.data.append(t)
+        self.l += 1
+        low = 0
+        high = self.l
+        target = t-3000
+        
+        while(low<=high):
+            mid = (low+high)//2
+            if self.data[mid]<target:
+                low = mid+1
+            elif self.data[mid]>=target:
+                high = mid-1
+        
+        return self.l-low
