@@ -1,0 +1,17 @@
+class Solution:
+    def sortArrayByParityII(self, nums: List[int]) -> List[int]:
+        
+        odds = []
+        even = []
+        for i in nums :
+            if i%2 :
+                odds.append(i)
+            else :
+                even.append(i)
+        
+        res = []
+        for i in range(len(odds)):
+            res.append(even[i])
+            res.append(odds[i])
+            
+        return res
