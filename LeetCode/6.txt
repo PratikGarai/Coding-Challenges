@@ -1,0 +1,33 @@
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        
+        st = ""
+        l = len(s)
+        
+        if l==0 or l==1 or numRows==1:
+            return s
+        
+        for row in range(0,numRows):
+            
+            base = row
+            current = base
+            
+            if row==0 or row==numRows-1 :
+                # add one character
+                while(base<l and current<l):
+                    st += s[current]
+                    current += 2*numRows -2
+                
+            
+            else :
+                # add 2 characters
+                while(base<l and current<l):
+                    st += s[current]
+                    
+                    jmp = 2*(numRows - row -1)
+                    if (current+jmp)<l:
+                        st += s[current+jmp]
+                    
+                    current += 2*numRows -2
+        
+        return st
