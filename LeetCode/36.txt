@@ -1,0 +1,37 @@
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        
+        #for i in board :
+        #    print(i)
+        
+        for i in range(9):
+            s = set({})
+            for j in range(9):
+                if board[j][i]!='.' :
+                    if board[j][i] in s:
+                        return False
+                    else :
+                        s.add(board[j][i])
+        
+        for i in range(9):
+            s = set({})
+            for j in range(9):
+                if board[i][j]!='.' :
+                    if board[i][j] in s:
+                        return False
+                    else :
+                        s.add(board[i][j])
+        
+        for i in range(0,7,3):
+            for j in range(0,7,3):
+                #print(i,j)
+                s = set({})
+                for k in range(3):
+                    for l in range(3):
+                        if board[i+k][j+l]!='.' :
+                            if board[i+k][j+l] in s :
+                                return False
+                            else :
+                                s.add(board[i+k][j+l])
+                        
+        return True
