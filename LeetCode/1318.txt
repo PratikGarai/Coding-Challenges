@@ -1,0 +1,26 @@
+class Solution:
+    def minFlips(self, a: int, b: int, c: int) -> int:
+        
+        b1 = bin(a)[2:]
+        b2 = bin(b)[2:]
+        b3 = bin(c)[2:]
+        l1 = len(b1)
+        l2 = len(b2)
+        l3 = len(b3)
+        
+        lmax = max(l1, l2, l3)
+        b1 = "0"*(lmax-l1)+b1
+        b2 = "0"*(lmax-l2)+b2
+        b3 = "0"*(lmax-l3)+b3
+        
+        count = 0
+        
+        for i in range(lmax):
+            if b1[i]=="1" and b2[i]=="1" and b3[i]=="0":
+                count += 2
+            elif b1[i]=="0" and b2[i]=="0" and b3[i]=="1":
+                count += 1
+            elif (b1[i]=="1" or b2[i]=="1") and b3[i]=="0":
+                count += 1
+        
+        return count
