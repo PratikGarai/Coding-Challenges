@@ -1,0 +1,30 @@
+class Solution:
+    def get_n(self, word : str):
+        
+        val = 0
+        visited  = set({})
+        for i in word:
+            if i not in visited :
+                visited.add(i)
+                val += 2**(ord(i)-97)
+        return val
+        
+        
+    def maxProduct(self, words: List[str]) -> int:
+        
+        l = len(words)
+        vals = [0 for i in range(l)]
+        ls = [0 for i in range(l)]
+        
+        for ind,i in enumerate(words):
+            ls[ind] = len(i)
+            vals[ind] = self.get_n(i)
+        
+        mx= 0
+        for i in range(l-1):
+            for j in range(1,l):
+                if i!=j and (vals[i]|vals[j])==(vals[i]+vals[j]):
+                    mx = max(mx, ls[i]*ls[j])
+                    #print(words[i], words[j])
+        
+        return mx
