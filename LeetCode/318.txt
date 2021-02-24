@@ -28,3 +28,32 @@ class Solution:
                     #print(words[i], words[j])
         
         return mx
+
+
+==================================================================
+
+class Solution:
+    def maxProduct(self, words: List[str]) -> int:
+        
+        l = len(words)
+        vals = {}
+        nm = 0
+        d = {}
+        
+        for i in words:
+            mask = 0
+            for c in i:
+                mask = mask|(1<<(ord(c)-97))
+            if mask in vals :
+                vals[mask] = max(vals[mask], len(i))
+            else :
+                vals[mask] = len(i)
+            
+        
+        mx= 0
+        for i in vals :
+            for j in vals :
+                if not i&j :
+                    mx = max(vals[i]*vals[j], mx)
+        
+        return mx
