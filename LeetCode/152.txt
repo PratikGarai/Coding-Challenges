@@ -1,0 +1,18 @@
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        
+        mi = nums[0]
+        mx = nums[0]
+        mp = nums[0]
+        
+        for i in nums[1:]:
+            
+            if i<0:
+                mx,mi =  mi,mx
+                
+            mx = max(i, mx*i)
+            mi = min(i, mi*i)
+            
+            mp  = max(mp, mx)
+        
+        return mp
