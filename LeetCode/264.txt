@@ -1,0 +1,31 @@
+class Solution:
+    def nthUglyNumber(self, n: int) -> int:
+        
+        nums = [1 for i in range(n)]
+        i1,i2,i3 = 0,0,0
+        count = 1
+        done = set({})
+        done.add(1)
+        
+        while(count<n):
+        
+            if nums[i1]*2 == min(nums[i1]*2,nums[i2]*3,nums[i3]*5):
+                if nums[i1]*2 not in done:
+                    nums[count] = nums[i1]*2
+                    done.add(nums[count])
+                    count += 1
+                i1 += 1
+            elif nums[i2]*3 == min(nums[i1]*2,nums[i2]*3,nums[i3]*5):
+                if nums[i2]*3 not in done:
+                    nums[count] = nums[i2]*3
+                    done.add(nums[count])
+                    count += 1
+                i2 += 1
+            else :
+                if nums[i3]*5 not in done:
+                    nums[count] = nums[i3]*5
+                    done.add(nums[count])
+                    count += 1
+                i3 += 1
+        
+        return nums[n-1]
