@@ -1,0 +1,31 @@
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        
+        self.grid = grid
+        self.m = len(grid)
+        self.n=  len(grid[0])
+        
+        self.dx = [0,0,1,-1]
+        self.dy = [1,-1,0,0]
+        
+        self.visited = [[ False for i in range(self.n)] for j in range(self.m)]
+        self.count = 0
+        
+        for i in range(self.m):
+            for j in range(self.n):
+                if grid[i][j]=='1' and not self.visited[i][j]:
+                    self.count += 1
+                    self.doDFS(i,j)
+        
+        return self.count
+    
+    def doDFS(self, i, j):
+        
+        if self.visited[i][j]:
+            return 
+        else :
+            self.visited[i][j] = True
+            for it in range(4):
+                ni, nj = i+self.dx[it], j+self.dy[it]
+                if ni>=0 and nj>=0 and ni<self.m and nj<self.n and self.grid[ni][nj]=='1':
+                    self.doDFS(ni,nj)
