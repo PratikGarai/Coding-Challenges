@@ -1,0 +1,21 @@
+class Solution:
+    def getHint(self, secret: str, guess: str) -> str:
+        
+        d1 = { i : 0 for i in range(10)}
+        d2 = { i : 0 for i in range(10)}
+        l = len(secret)
+        cows = 0
+        bulls = 0
+        
+        for i in range(l):
+            if secret[i]==guess[i] :
+                bulls += 1
+            else :
+                d1[ord(secret[i])-48] += 1
+                d2[ord(guess[i])-48] += 1
+        
+        for i in range(10):
+            cows += min(d1[i], d2[i])
+        
+        return str(bulls)+"A"+str(cows)+"B"
+        
