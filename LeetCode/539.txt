@@ -1,0 +1,17 @@
+class Solution:
+    def findMinDifference(self, t: List[str]) -> int:
+        
+        mi = 1440
+        l = len(t)
+        t1 = [0 for i in range(l)]
+        for i in range(l):
+            a,b = list(map(int, t[i].split(":")))
+            t1[i] = a*60+b
+        
+        t1 = sorted(t1)
+        for i in range(l-1):
+            mi = min(mi, t1[i+1]-t1[i])
+        
+        mi = min(mi, 1440-t1[l-1]+t1[0])
+        
+        return mi
