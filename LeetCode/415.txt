@@ -1,0 +1,37 @@
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+        
+        l1 = len(num1)
+        l2 = len(num2)
+        
+        ls = ['' for i in range(max(l1,l2)+1)]
+        
+        p1,p2 = l1-1, l2-1
+        carry = 0
+        ind = max(l1,l2)
+        
+        while(p1>=0 and p2>=0):
+            ls[ind] = str((ord(num1[p1])+ord(num2[p2])-96+carry)%10)
+            carry = (ord(num1[p1])+ord(num2[p2])-96+carry)//10
+            p1 -= 1
+            p2 -= 1
+            ind -= 1
+        
+        while(p1>=0):
+            ls[ind] = str((ord(num1[p1])-48+carry)%10)
+            carry = (ord(num1[p1])-48+carry)//10
+            p1 -= 1
+            ind -= 1
+        
+        while(p2>=0):
+            ls[ind] = str((ord(num2[p2])-48+carry)%10)
+            carry = (ord(num2[p2])-48+carry)//10
+            p2 -= 1
+            ind -= 1
+        
+        ls[0]=str(carry)
+        
+        if ls[0]=='0' or ls[0]=='' :
+            ls.pop(0)
+        
+        return ''.join(ls)
