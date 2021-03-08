@@ -1,0 +1,29 @@
+class Solution:
+    def change(self, amount: int, coins: List[int]) -> int:
+        
+        if amount==0:
+            return 1
+        
+        self.mem = {}
+        self.coins = sorted(coins)
+        c = 0
+        for i in self.coins:
+            c += self.count(amount-i,i)
+        return c
+    
+    def count(self, amount, limit):
+        if amount==0 :
+            return 1
+        if amount<0 :
+            return 0
+        
+        if (amount,limit) in self.mem :
+            return self.mem[(amount,limit)]
+        
+        s = 0
+        for i in self.coins:
+            if i>limit :
+                break
+            s += self.count(amount-i, i)
+            self.mem[(amount,limit)] = s
+        return s
