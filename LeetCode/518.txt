@@ -27,3 +27,28 @@ class Solution:
             s += self.count(amount-i, i)
             self.mem[(amount,limit)] = s
         return s
+
+
+==================================  SOLUTION 2 ================================
+
+class Solution:
+    def change(self, amount: int, coins: List[int]) -> int:
+        
+        if amount==0 :
+            return 1
+        if coins==[]:
+            return 0
+        
+        l = len(coins)
+        coins = sorted(coins)
+        dp = [[0 for i in range(amount+1)] for j in range(l)]
+        
+        for i in range(l):
+            
+            dp[i][0] = 1
+            for j in range(1,amount+1):
+                dp[i][j] = dp[i-1][j]
+                if j-coins[i]>=0:
+                    dp[i][j] += dp[i][j-coins[i]]
+        
+        return dp[l-1][amount]
