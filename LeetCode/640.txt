@@ -1,0 +1,59 @@
+class Solution:
+    def solveEquation(self, e: str) -> str:
+        
+        p = e.split('=')
+        a1 = self.compute(p[0])
+        a2 = self.compute(p[1])
+        
+        x = a1[0]-a2[0]
+        y = a2[1]-a1[1]
+        
+        #print(p)
+        #print(a1, a2)
+        if x==0 and y==0 :
+            return "Infinite solutions"
+        elif x==0 :
+            return "No solution"
+        else :
+            return "x="+str((a2[1]-a1[1])//(a1[0]-a2[0]))
+    
+    def compute(self, st):
+        
+        sig = 1
+        arr = [0,0]
+        st += '-'
+        v = 0
+        isCoef = False
+        
+        for i in st :
+            if i=='-':
+                if sig==1 :
+                    arr[1]+= v
+                else :
+                    arr[1]-= v
+                sig = 2
+                v = 0
+                isCoef = False
+            elif i=='+':
+                if sig==1 :
+                    arr[1]+= v
+                else :
+                    arr[1]-= v
+                sig = 1
+                v = 0
+                isCoef = False
+            elif i=='x':
+                if v==0 and not isCoef:
+                    v = 1
+                if sig==1 :
+                    arr[0]+= v
+                else :
+                    arr[0]-= v
+                v = 0
+                isCoef = False
+            elif ord(i)>=48 and ord(i)<=58:
+                v = v*10 + ord(i)-48 
+                isCoef = True
+            #print(v, sig)
+        
+        return arr
