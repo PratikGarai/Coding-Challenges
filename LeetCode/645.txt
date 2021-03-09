@@ -1,0 +1,16 @@
+class Solution:
+    def findErrorNums(self, nums: List[int]) -> List[int]:
+        
+        l = len(nums)
+        su = (l*(l+1))//2
+        vi = set({})
+        dup = nums[0]
+        
+        for i in nums :
+            su -= i
+            if i in vi:
+                dup = i
+            else :
+                vi.add(i)
+        
+        return [dup, dup+su]
