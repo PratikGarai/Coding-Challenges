@@ -14,3 +14,21 @@ class Solution:
                 vi.add(i)
         
         return [dup, dup+su]
+
+
+
+================= SOLUTION 2 ==================
+
+class Solution:
+    def replaceWords(self, dictionary: List[str], sentence: str) -> str:
+        
+        st = set(dictionary)
+        words = sentence.split(' ')
+        
+        for ind, i in enumerate(words):
+            for j in range(1,len(i)+1):
+                if i[:j] in st :
+                    words[ind]=i[:j]
+                    break
+        
+        return ' '.join(words)
