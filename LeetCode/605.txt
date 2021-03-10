@@ -1,0 +1,19 @@
+class Solution:
+    def canPlaceFlowers(self, f: List[int], n: int) -> bool:
+        
+        count = 0
+        c = 0
+        g = [0]
+        g.extend(f)
+        g.append(0)
+        
+        for i in g:
+            if i==0 :
+                c += 1
+            elif c>0 :
+                count += (c-1)//2
+                c = 0
+        if c>0:        
+            count += (c-1)//2
+        #print(count)
+        return n<=count
