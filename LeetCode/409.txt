@@ -1,0 +1,20 @@
+class Solution:
+    def longestPalindrome(self, st: str) -> int:
+        
+        d = { i:0 for i in range(60)}
+        # st = st.lower()
+        for i in st :
+            d[ord(i)-65] += 1
+        odd = False
+        s = 0
+        for i in d :
+            if d[i]%2==1 :
+                odd = True
+                s += d[i]-1
+            else :
+                s += d[i]
+        
+        if odd :
+            s += 1
+        
+        return s
