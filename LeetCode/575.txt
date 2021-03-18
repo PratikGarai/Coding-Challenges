@@ -1,0 +1,4 @@
+class Solution:
+    def distributeCandies(self, t: List[int]) -> int:
+        
+        return min(len(set(t)), len(t)//2)
