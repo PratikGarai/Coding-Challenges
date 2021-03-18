@@ -1,0 +1,23 @@
+class Solution:
+    def findRestaurant(self, l1: List[str], l2: List[str]) -> List[str]:
+        
+        d = {}
+        for ind,i in enumerate(l1) :
+            if i not in d :
+                d[i] = [ind, -1]
+                
+        for ind, i in enumerate(l2) :
+            if i in d and d[i][1]==-1 :
+                d[i][1] = ind
+        
+        mi = len(l1)+len(l2)
+        item = []
+        for i,j in d.items():
+            if j[0]!=-1 and j[1]!=-1 :
+                if sum(j)<mi:
+                    mi = sum(j)
+                    item = [i]
+                elif sum(j)==mi :
+                    item.append(i)
+        
+        return item
