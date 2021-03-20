@@ -1,0 +1,11 @@
+class Solution:
+    def maxCount(self, m: int, n: int, ops: List[List[int]]) -> int:
+        
+        mi1 = m
+        mi2 = n
+        
+        for i, j in ops:
+            mi1 = min(mi1, i)
+            mi2 = min(mi2, j)
+            
+        return mi1*mi2
