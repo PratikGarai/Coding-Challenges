@@ -1,0 +1,21 @@
+class Solution:
+    def isBalanced(self, root: TreeNode) -> bool:
+        if not root:
+            return True
+        self.b = True
+        self.explore(root,0)
+        return self.b
+    
+    def explore(self, node, d):
+        if not self.b:
+            return 0
+        v1,v2 = d,d
+        if node.left :
+            v1 = self.explore(node.left, d+1)
+        if node.right:
+            v2 = self.explore(node.right, d+1)
+        
+        if abs(v2-v1)>1:
+            self.b = False
+        #print(node.val, max(v1,v2))
+        return max(v1,v2)
