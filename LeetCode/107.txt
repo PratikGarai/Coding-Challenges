@@ -1,0 +1,15 @@
+from collections import defaultdict
+
+class Solution:
+    def levelOrderBottom(self, root: TreeNode) -> List[List[int]]:
+        self.d = defaultdict(lambda : [])
+        self.explore(root,0)
+        return list(self.d.values())[::-1]
+        
+    def explore(self, node, level):
+        if not node:
+            return
+        
+        self.d[level].append(node.val)
+        self.explore(node.left, level+1)
+        self.explore(node.right, level+1)
