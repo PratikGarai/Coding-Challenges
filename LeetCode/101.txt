@@ -1,0 +1,18 @@
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        return self.explore(root, root)
+    
+    def explore(self, node1, node2):
+        if not node1 and not node2:
+            return True
+        
+        if node1==None and node2:
+            return False
+        
+        if node2==None and node1:
+            return None
+        
+        if node1.val!=node2.val:
+            return False
+        
+        return self.explore(node1.left, node2.right) and self.explore(node1.right, node2.left)
