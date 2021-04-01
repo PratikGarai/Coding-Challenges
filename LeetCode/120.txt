@@ -1,0 +1,15 @@
+class Solution:
+    def minimumTotal(self, t: List[List[int]]) -> int:
+        
+        rows = len(t)
+        
+        level = rows-2
+        while(level>=0):
+            
+            cols = len(t[level])
+            for col in range(cols):
+                t[level][col] += min(t[level+1][col], t[level+1][col+1])
+            level -= 1
+        
+        return t[0][0]
+            
