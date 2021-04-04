@@ -1,48 +1,37 @@
-def factorial(n):
-    if n==0 or n==1:
-        return 1
-    f = 1
-    for i in range(2,n+1):
-        f *= i
-    return f
-
-def process(st):
-    a = [0 for i in range(26)]
-    for i in st:
-        a[ord(i)-97] += 1
-    
-    se = 0
-    odd = 0
-    numerator = 1
-    denominator = 1
-    for i in a:
-        if i!=0:
-            if i%2 :
-                odd += 1
-                if i>2:
-                    se += i-1
-                    denominator *= factorial(i//2)
-            else :
-                se += i
-                denominator *= factorial(i//2)
-    numerator = factorial(se//2)
-    if odd>1:
-        numerator *= odd
-    print(numerator//denominator)
+def getRes(counts):
+    l = 0
+    o = 0
+    res = 1
+    den = 1
+    for i in counts :
+        for j in range(1,(i//2)+1):
+            res = (res*(l+j)//j)
+        l += i//2
+        o += i%2
+        
+    if not o:
+        o = 1
+    res = o*res
+    return res%mod
 
 def main():
+    
     s = input()
     l = len(s)
-    for i in range(int(input())):
-        b,g = list(map(int, input().split()))
-        if b==g:
-            print(1)
-        elif b==g-1 and s[b-1]!=s[g-1]:
-            print(2)
-        elif b==g-1 and s[b-1]==s[g-1]:
-            print(1)
-        else :
-            process(s[b-1:g])
+    mat = [[0 for i in range(l)] for j in range(l)]
+    
+    for begin in range(l):
+        counts = [0 for i in range(26)]
+        mat[begin][begin] = 1
+        counts[ord(s[begin])-97] += 1
+        for end in range(begin+1,l):
+            ind = ord(s[end])-97
+            counts[ind] += 1
+            mat[begin][end] = getRes(counts)
+    
+    t = int(input())
+    for i in range(t):
+        l,r = map(int, input().split())
+        print(mat[l-1][r-1]%mod)
 
-if __name__ == '__main__':
-    main()
+main()
