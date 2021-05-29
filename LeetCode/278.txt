@@ -1,0 +1,17 @@
+class Solution:
+    def firstBadVersion(self, n):
+        
+        low = 1
+        high = n
+        mid = (low+high)//2
+        
+        while(True):
+            if isBadVersion(mid) and not isBadVersion(mid-1):
+                break
+            if isBadVersion(mid) :
+                high = mid - 1 
+            else :
+                low = mid + 1
+            mid = (low+high)//2
+                
+        return mid
