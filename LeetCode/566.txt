@@ -15,3 +15,27 @@ class Solution:
             ls.append(l[i*c:(i+1)*c])
         
         return ls
+
+
+==============  SOLUTION 2 ==============
+class Solution:
+    def matrixReshape(self, m: List[List[int]], r: int, c: int) -> List[List[int]]:
+        
+        n = [[0 for i in range(c)] for i in range(r)]
+        a = len(m)
+        if a==0:
+            return []
+        b = len(m[0])
+        
+        if a*b != r*c :
+            return m
+        e = 0
+        f = 0
+        for i in range(r):
+            for j in range(c):
+                n[i][j] = m[e][f]
+                f += 1
+                if f==b : 
+                    f = 0
+                    e += 1
+        return n
