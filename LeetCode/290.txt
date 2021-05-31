@@ -1,0 +1,23 @@
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        
+        l1 = len(pattern)
+        s = s.split(' ')
+        l2 = len(s)
+        
+        if l1!= l2 :
+            return False
+    
+        d1 = {}
+        d2 = {}
+        for i in range(l1) :
+            if pattern[i] not in d1 and s[i] not in d2:
+                d1[pattern[i]] = s[i]
+                d2[s[i]] = pattern[i]
+            elif pattern[i] in d1 and s[i] in d2 and d1[pattern[i]]==s[i] and d2[s[i]]==pattern[i]:
+                continue
+            else :
+                return False
+            
+        return True
+            
