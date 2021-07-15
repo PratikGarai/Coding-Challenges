@@ -1,11 +1,22 @@
 def main():
-    n = input().split("1")
+    s = {"1", "14", "144"}
+    n = input()
+
+    st = ""
+    streak = False
     for i in n :
-        if len(i)>2:
+        if st in s :
+            streak = True
+        st += i
+        if st not in s and not streak:
             return False
-        if not (i=="4" or i=="44" or i==""):
-            return False
-    return True
+        if st not in s :
+            st = i
+            streak = False
+        else :
+            streak = True
+
+    return st in s
 
 n = main()
 if n:
