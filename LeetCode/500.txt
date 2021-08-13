@@ -1,0 +1,31 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        
+        a = "qwertyuiop"
+        b = "asdfghjkl"
+        c = "zxcvbnm"
+        
+        ls = []
+        for k in words:
+            i = k.lower()
+            add = True
+            if i[0] in a :
+                for j in i:
+                    if j not in a:
+                        add = False
+                        break
+            elif i[0] in b:
+                for j in i:
+                    if j not in b:
+                        add = False
+                        break
+            else :
+                for j in i:
+                    if j not in c:
+                        add = False
+                        break
+            
+            if add :
+                ls.append(k)
+        
+        return ls
