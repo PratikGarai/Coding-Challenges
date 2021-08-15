@@ -1,0 +1,22 @@
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        
+        vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+        v = []
+        
+        l = 0
+        for i in s :
+            if i in vowels:
+                v.append(i)
+                l += 1
+        
+        c = 0
+        st = ""
+        for i in s:
+            if i in vowels:
+                st += v[l-1-c]
+                c += 1
+            else :
+                st += i
+        
+        return st
