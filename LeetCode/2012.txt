@@ -1,0 +1,32 @@
+class Solution(object):
+    def sumOfBeauties(self, nums):
+        l = len(nums)
+        v = [0 for i in range(l)]
+        ans = 0
+        
+        mx = nums[0]
+        mxtn = [mx]
+        for i in range(1, l) :
+            mxtn.append(mx)
+            mx = max(nums[i], mx)
+        
+        mi = nums[l-1]
+        mitn = [mi]
+        for i in range(l-2,-1,-1) :
+            mitn.append(mi)
+            mi = min(nums[i], mi)
+        mitn = mitn[::-1]
+        
+        for i in range(1, l-1) :
+            if mitn[i]>nums[i] and mxtn[i]<nums[i] :
+                ans += 2
+                v[i] = 1
+        
+        for i in range(1, l-1):
+            if v[i]==1 :
+                continue
+            if nums[i-1]<nums[i] and nums[i]<nums[i+1] :
+                ans += 1
+        
+        return ans
+        
