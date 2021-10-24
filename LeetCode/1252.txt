@@ -1,0 +1,17 @@
+class Solution:
+    def oddCells(self, m: int, n: int, indices: List[List[int]]) -> int:
+        
+        rows = [0 for i in range(m)]
+        cols = [0 for i in range(n)]
+        
+        for r,c in indices : 
+            rows[r] += 1
+            cols[c] += 1
+        
+        c = 0
+        for i in range(m):
+            for j in range(n):
+                if (rows[i]+cols[j])%2==1 : 
+                    c+=1
+        
+        return c
