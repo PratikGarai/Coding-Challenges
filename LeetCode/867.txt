@@ -1,0 +1,14 @@
+class Solution:
+    def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+        
+        nums = []
+        l = len(matrix)
+        b = len(matrix[0])
+        
+        for i in range(b):
+            r = []
+            for j in range(l):
+                r.append(matrix[j][i])
+            nums.append(r)
+        
+        return nums
