@@ -1,0 +1,15 @@
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        
+        ans = 0
+        for i in nums :
+            c = 0
+            n = i
+            while n>0 :
+                c += 1
+                n //= 10
+            
+            if c%2==0 : 
+                ans += 1
+        
+        return ans
