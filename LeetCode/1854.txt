@@ -1,0 +1,22 @@
+class Solution:
+    def maximumPopulation(self, logs: List[List[int]]) -> int:
+        
+        base = 1950
+        maximum = 2050
+        
+        arr = [0 for i in range(maximum-base+1)]
+        
+        for i,j in logs :
+            arr[i-base] += 1
+            arr[j-base] -= 1
+        
+        curr = 0
+        mx = 0
+        mxind = 0
+        for i in range(maximum-base+1) :
+            curr += arr[i]
+            if curr > mx :
+                mx = curr
+                mxind = i
+        
+        return base + mxind
