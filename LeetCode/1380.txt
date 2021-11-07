@@ -1,0 +1,20 @@
+class Solution:
+    def luckyNumbers (self, matrix: List[List[int]]) -> List[int]:
+        
+        r = len(matrix)
+        c = len(matrix[0])
+        minRows = [1000000 for i in range(r)]
+        maxCols = [0 for i in range(c)]
+        
+        for i in range(r):
+            for j in range(c):
+                minRows[i] = min(minRows[i], matrix[i][j])
+                maxCols[j] = max(maxCols[j], matrix[i][j])
+        
+        lnum = []
+        for i in range(r):
+            for j in range(c):
+                if matrix[i][j]==minRows[i] and matrix[i][j]==maxCols[j] :
+                    lnum.append(matrix[i][j])
+        
+        return lnum
