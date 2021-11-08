@@ -1,0 +1,29 @@
+class Solution:
+    
+    def checkEquality(self, mat1, mat2) :
+        l = len(mat1)
+        for i in range(l):
+            for j in range(l):
+                if mat1[i][j]!=mat2[i][j]:
+                    return False
+        return True
+    
+    def rotate90(self, mat) :
+        l = len(mat)
+        ans = [[0 for i in range(l)] for j in range(l)]
+        for i in range(l):
+            for j in range(l):
+                ans[j][l-i-1] = mat[i][j]
+        return ans
+            
+    
+    def findRotation(self, mat: List[List[int]], target: List[List[int]]) -> bool:
+        mat2 = mat
+        for i in range(4):
+            mat3 = self.rotate90(mat2)
+            if self.checkEquality(mat3, target) :
+                return True
+            mat2 = mat3
+        
+        return False
+        
