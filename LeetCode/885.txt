@@ -1,0 +1,42 @@
+class Solution:
+    def spiralMatrixIII(self, rows: int, cols: int, rStart: int, cStart: int) -> List[List[int]]:
+        
+        top = rStart
+        bottom = rStart + 1
+        left = cStart
+        right = cStart + 1
+        element = 1
+        
+        ans = []
+        
+        while element<=(rows*cols) :
+            if top>=0 and top<rows : 
+                for i in range(left, right) :
+                    if i>=0 and i<cols :
+                        ans.append([top,i])
+                        element += 1
+            
+            if right>=0 and right<cols :
+                for i in range(top, bottom) :
+                    if i>=0 and i<rows :
+                        ans.append([i, right])
+                        element += 1
+            
+            if bottom>=0 and bottom<rows :
+                for i in range(right, left, -1) :
+                    if i>=0 and i<cols :
+                        ans.append([bottom,i])
+                        element += 1
+            
+            if left>=0 and left<cols :
+                for i in range(bottom, top, -1) :
+                    if i>=0 and i<rows :
+                        ans.append([i, left])
+                        element += 1
+            
+            top -= 1
+            bottom += 1
+            left -= 1
+            right += 1
+        
+        return ans
