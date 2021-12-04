@@ -1,0 +1,24 @@
+class Solution:
+    
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        n = 0
+        prod = 1
+        
+        for i in nums :
+            if i==0 :
+                n += 1
+            else :
+                prod *= i
+        
+        arr = []
+        for i in nums :
+            if n>=2 :
+                arr.append(0)
+            elif n==1 and i!=0 :
+                arr.append(0)
+            elif n==1 and i==0 :
+                arr.append(prod)
+            else :
+                arr.append(prod//i)
+        
+        return arr
