@@ -17,3 +17,47 @@ class Solution:
             for j in range(n):
                 if ms[i] or ns[j]:
                     matrix[i][j] = 0
+
+
+============== FOLLOW UP ===============
+
+class Solution:  
+    def setZeroes(self, m: List[List[int]]) -> None:
+        r = len(m)
+        c = len(m[0])
+        fr = False
+        fc = False
+        
+        for i in range(r):
+            if m[i][0]==0:
+                fc=True
+                break
+        
+        for i in range(c):
+            if m[0][i]==0:
+                fr=True
+                break
+        
+        for i in range(r):
+            for j in range(c):
+                if m[i][j]==0 :
+                    m[i][0] = 0
+                    m[0][j] = 0
+            
+        for i in range(1,r):
+            if m[i][0]==0:
+                for j in range(c):
+                    m[i][j]=0
+        
+        for i in range(1,c):
+            if m[0][i]==0:
+                for j in range(r):
+                    m[j][i]=0
+        
+        if fc:
+            for i in range(r):
+                m[i][0]=0
+            
+        if fr:
+            for i in range(c):
+                m[0][i]=0
