@@ -1,0 +1,12 @@
+class Solution:
+    def reverse(self, nums, start, end) :
+        for i in range((end-start)//2) :
+            nums[start+i], nums[end-i-1] = nums[end-i-1], nums[start+i]
+    
+    def rotate(self, nums: List[int], k: int) -> None:
+        l = len(nums)
+        k = k%l
+        
+        self.reverse(nums, 0, l-k)
+        self.reverse(nums, l-k, l)
+        self.reverse(nums, 0, l)
