@@ -1,0 +1,27 @@
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        n0 = 0
+        n1 = 0
+        n2 = 0
+        
+        for i in nums:
+            if i==0 :
+                n0 += 1
+            elif i==1 :
+                n1 += 1
+            else :
+                n2 += 1
+        
+        ind = 0
+        for i in range(n0) :
+            nums[ind] = 0
+            ind += 1
+        for i in range(n1) :
+            nums[ind] = 1
+            ind += 1
+        for i in range(n2) :
+            nums[ind] = 2
+            ind += 1
