@@ -21,3 +21,24 @@ class Solution:
                 values[i] = max(values[i], values[i-3]+nums[i])
         
         return values[l-1]
+
+
+================= FOLLOW UP =====================
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        
+        l = len(nums)
+        if l==0 : 
+            return 0
+        if l<=2 :
+            return max(nums)
+        
+        dp = [0 for i in range(l)]
+        dp[0] = nums[0]
+        dp[1] = max(nums[1], nums[0])
+        
+        for i in range(2, l):
+            dp[i] = max(nums[i]+dp[i-2], dp[i-1])
+        
+        return dp[l-1]
