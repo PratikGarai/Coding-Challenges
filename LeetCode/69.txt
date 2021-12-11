@@ -1,0 +1,32 @@
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        
+        start = 1
+        end = x 
+        
+        m = x
+        mi = 0
+        
+        while(end>start):
+            mid = (start+end)//2
+            sq = mid*mid
+            sqd = abs(sq-x)
+            if sqd<m :
+                mi = mid
+                m = sqd
+            if sq>x : 
+                end = mid -1
+            elif sq<x : 
+                start = mid + 1
+            elif sq==x :
+                break
+        
+        tmi = mi
+        if abs(((mi-1)*(mi-1))-x)<m and mi>0:
+            tmi = mi-1
+        if abs(((mi+1)*(mi+1))-x)<m :
+            tmi = mi+1
+        if (tmi*tmi)>x:
+            tmi -= 1
+        
+        return tmi
