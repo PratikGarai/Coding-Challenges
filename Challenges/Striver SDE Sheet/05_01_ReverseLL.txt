@@ -1,0 +1,16 @@
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+        hd = ListNode(-1)
+        curr = hd
+        
+        def deep(node) :
+            nonlocal curr
+            if not node :
+                return
+            deep(node.next)
+            curr.next = ListNode(node.val)
+            curr = curr.next
+        
+        deep(head)
+        return hd.next
