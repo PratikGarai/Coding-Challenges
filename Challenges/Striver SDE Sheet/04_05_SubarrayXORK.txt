@@ -1,0 +1,27 @@
+class Solution:
+    # @param A : list of integers
+    # @param B : integer
+    # @return an integer
+    def solve(self, A, B):
+        
+        d = {}
+        l = len(A)
+        acc = 0
+        c = 0
+        
+        for i in range(l) :
+            acc = acc^A[i] 
+            if acc in d : 
+                d[acc] += 1
+            else :
+                d[acc] = 1
+            
+            if acc^B in d : 
+                c += d[acc^B]
+            
+            if acc == B : 
+                c += 1
+        
+        if B == 0 : 
+            c -= l
+        return c
