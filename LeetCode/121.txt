@@ -9,3 +9,16 @@ class Solution:
             profit = max(profit, price-prices[i])
         
         return profit
+
+===================================================================
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        
+        mx = 0
+        mi = prices[0]
+        l = len(prices)
+        for i in range(1, l) :
+            mx = max(mx, prices[i]-mi)
+            mi = min(mi, prices[i])
+        
+        return mx
