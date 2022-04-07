@@ -1,0 +1,30 @@
+class Solution:
+    def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        
+        ans = ListNode(-1)
+        
+        l = 0
+        curr = head
+        while curr : 
+            l += 1
+            curr = curr.next
+        
+        prev = ans
+        
+        for j in range(l//k) :
+            l = []
+            for i in range(k) :
+                l.append(head)
+                head = head.next
+            
+            l = l[::-1]
+            nxt = l[0].next
+            
+            for i in range(k-1) :
+                l[i].next = l[i+1]
+            
+            prev.next = l[0]
+            l[-1].next = nxt
+            prev = l[-1]
+        
+        return ans.next
