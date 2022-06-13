@@ -3,3 +3,35 @@ class Solution:
         while nums[0] != nums[nums[0]]:
             nums[nums[0]], nums[0] = nums[0], nums[nums[0]]
         return nums[0]
+
+
+=======================================================================
+class Solution:
+    def findDuplicate(self, nums):
+        
+        slow = nums[0]
+        fast = nums[0]
+        while True : 
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+            if slow==fast : 
+                break
+                
+        l = 0
+        target = slow
+        while True :
+            slow = nums[slow]
+            l += 1
+            if target == slow : 
+                break
+        
+        slow = nums[0]
+        fast = nums[0]
+        for i in range(l) :
+            fast = nums[fast]
+        
+        while slow != fast : 
+            slow = nums[slow]
+            fast = nums[fast]
+            
+        return slow
