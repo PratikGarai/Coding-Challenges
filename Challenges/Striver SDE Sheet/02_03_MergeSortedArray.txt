@@ -1,0 +1,35 @@
+class Solution:
+    def merge(self, m: List[int], l1: int, n: List[int], l2: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        
+        l = l1+l2
+        a = [0 for i in range(l)]
+        
+        ind1 = 0
+        ind2 = 0
+        ind = 0
+        
+        while ind1 < l1 and ind2 < l2 :
+            if m[ind1] < n[ind2] :
+                a[ind] = m[ind1]
+                ind += 1
+                ind1 += 1
+            else : 
+                a[ind] = n[ind2]
+                ind += 1
+                ind2 += 1
+        
+        while ind1 < l1 : 
+            a[ind] = m[ind1]
+            ind += 1
+            ind1 += 1
+        
+        while ind2 < l2 :
+            a[ind] = n[ind2]
+            ind += 1
+            ind2 += 1
+        
+        for i in range(l) :
+            m[i] = a[i]
