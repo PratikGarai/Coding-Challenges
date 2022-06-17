@@ -21,3 +21,71 @@ def takeInput() :
 # Main.
 arr, n = takeInput()
 print(getInversions(arr, n))
+
+
+=====================================================================
+
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+def getInversions(arr, n) :
+    temp = [0 for i in range(n)]
+      
+    def mergeSort(left, right):
+        invCount = 0
+        
+        if left < right : 
+            mid = (left+right)//2
+            invCount += mergeSort(left, mid)
+            invCount += mergeSort(mid+1, right)
+            invCount += merge(left, mid, right)
+        
+        return invCount 
+    
+    def merge(left, mid, right) :
+        i = left
+        j = mid+1
+        k = left
+        
+        invCount = 0
+        
+        while i<=mid and j<=right : 
+            if arr[i] <= arr[j]:
+                temp[k] = arr[i]
+                i += 1
+                k += 1
+            else : 
+                temp[k] = arr[j]
+                invCount += (mid-i)+1
+                j += 1
+                k += 1
+        
+        while i <= mid : 
+            temp[k] = arr[i]
+            i += 1
+            k += 1
+        
+        while j <= right :
+            temp[k] = arr[j]
+            invCount += (mid-i)+1
+            j += 1
+            k += 1
+        
+        for i in range(left, right + 1) :
+            arr[i] = temp[i]
+        #print(left, mid, right, invCount)
+        return invCount
+    
+    return mergeSort(0, n-1)
+
+# Taking inpit using fast I/O.
+def takeInput() :
+    n = int(input())
+    arr = list(map(int, stdin.readline().strip().split(" ")))
+    return arr, n
+
+# Main.
+arr, n = takeInput()
+print(getInversions(arr, n))
