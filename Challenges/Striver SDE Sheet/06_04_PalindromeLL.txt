@@ -1,0 +1,22 @@
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        
+        l = 0
+        curr = head
+        while curr : 
+            curr = curr.next
+            l += 1
+        
+        flag = True
+        def rec(node, level) :
+            nonlocal flag, head
+            if level == l : 
+                return
+            rec(node.next, level+1)
+            if level > (l-1)//2 :
+                if head.val != node.val : 
+                    flag = False
+                head = head.next
+        
+        rec(head, 0)
+        return flag
