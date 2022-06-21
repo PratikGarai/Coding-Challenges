@@ -20,3 +20,24 @@ class Solution:
             trapped += max(0, min(lefts[i], rights[i])-height[i])
         
         return trapped
+
+==================================================================================
+
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        l = len(height)
+        
+        lefts = [0 for i in range(l)]
+        
+        ma = -1
+        for i in range(l) :
+            ma = max(ma, height[i])
+            lefts[i] = ma
+        
+        ma = -1
+        trapped = 0
+        for i in range(l-1, -1, -1) :
+            ma = max(ma, height[i])
+            trapped += max(0, min(lefts[i], ma)-height[i])
+        
+        return trapped
