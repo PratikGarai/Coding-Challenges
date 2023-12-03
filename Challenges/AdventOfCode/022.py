@@ -49,13 +49,11 @@ class Game:
         logging.info(
             f"Final status of game : {json.dumps(self.counts, indent=4)}")
 
-    def comparison(self, d: dict) -> bool:
-        for k in d.keys():
-            if k in self.counts and self.counts[k] > d[k]:
-                return False
-            else:
-                continue
-        return True
+    def get_power_set(self) -> int:
+        p = 1
+        for k, v in self.counts.items():
+            p = p*v
+        return p
 
 
 def main():
@@ -65,22 +63,13 @@ def main():
 
         games: list[Game] = []
         s = 0
-        d = {
-            "red": 12,
-            "green": 13,
-            "blue": 14
-        }
         for data in datas[:]:
             g = Game(data)
             g.parse()
             games.append(g)
 
         for game in games:
-            if not game.comparison(d):
-                print(
-                    f"Found impossible matching game {game.id} : {json.dumps(game.counts, indent=4)}")
-            else:
-                s += game.id
+            s += game.get_power_set()
 
         print(f"Result : {s}")
 
