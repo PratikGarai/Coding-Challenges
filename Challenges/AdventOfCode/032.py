@@ -22,7 +22,7 @@ class Matrix:
         self.cols = len(self.matrix[0])
 
     def is_special(self, char: str) -> bool:
-        if char=="*" :
+        if char == "*":
             return True
         return False
 
@@ -55,29 +55,33 @@ class Matrix:
                     num += char
                 else:
                     if num != "":
-                        res, (r_x, c_x) = self.check_proximity(r, start_col, end_col)
+                        res, (r_x, c_x) = self.check_proximity(
+                            r, start_col, end_col)
                         if res:
-                            logging.info(f"Successfully proximity test at [{r}][{c}] => {num}")
-                            data : list = self.buffer.get((r_x, c_x), [])
+                            logging.info(
+                                f"Successfully proximity test at [{r}][{c}] => {num}")
+                            data: list = self.buffer.get((r_x, c_x), [])
                             data.append(int(num))
                             self.buffer[(r_x, c_x)] = data
-                        else : 
-                            logging.info(f"Failing proximity test at [{r}][{c}] => {num}")
+                        else:
+                            logging.info(
+                                f"Failing proximity test at [{r}][{c}] => {num}")
                         num = ""
                         start_col = -1
                         end_col = -1
             if num != "":
                 res, (r_x, c_x) = self.check_proximity(r, start_col, end_col)
                 if res:
-                    logging.info(f"Successfully proximity test at [{r}][{c}] => {num}")
-                    data : list = self.buffer.get((r_x, c_x), [])
+                    logging.info(
+                        f"Successfully proximity test at [{r}][{c}] => {num}")
+                    data: list = self.buffer.get((r_x, c_x), [])
                     data.append(int(num))
                     self.buffer[(r_x, c_x)] = data
 
         s = 0
-        for k,v in self.buffer.items() :
-            if len(v) == 2 :
-                logging.info(f"Gear found at [{k[0]}][{k[1]}] : {v}") 
+        for k, v in self.buffer.items():
+            if len(v) == 2:
+                logging.info(f"Gear found at [{k[0]}][{k[1]}] : {v}")
                 s += v[0] * v[1]
         return s
 
