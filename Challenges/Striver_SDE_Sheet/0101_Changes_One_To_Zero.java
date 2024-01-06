@@ -75,3 +75,57 @@ class Solution {
         }
     }
 }
+
+
+/*
+* Solution 2
+* Use the first row and col instead of 2 arrays
+* Since 0,0 will have resposibilty of both first row and col, use a bool for the col and use 0,0 for row
+*/
+
+class Solution {
+    public void setZeroes(int[][] matrix) {
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        boolean c_zero = false;
+        int replacement = 0;
+
+        for(int i=0; i<rows; i++) {
+            for(int j=0; j<cols; j++) {
+                if(matrix[i][j]==0) {
+                    // mark row
+                    matrix[i][0] = replacement;
+
+                    // mark col
+                    if(j==0) {
+                        c_zero = true;
+                    } else {
+                        matrix[0][j] = replacement;
+                    }
+                }
+            }
+        }
+
+        for(int i=1; i<rows; i++) {
+            for(int j=1; j<cols; j++) {
+                if(matrix[i][0]==replacement || matrix[0][j]==replacement) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        boolean r_zero = matrix[0][0] == 0;
+        if(r_zero) {
+            for(int i=0; i<cols; i++) {
+                matrix[0][i] = 0;
+            }
+        }
+
+        if(c_zero) {
+            for(int j=0; j<rows; j++) {
+                matrix[j][0] = 0;
+            }
+        }
+    }
+}
