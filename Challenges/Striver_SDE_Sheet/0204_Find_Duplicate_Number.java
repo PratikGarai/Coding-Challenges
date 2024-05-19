@@ -56,3 +56,47 @@ class Solution {
         return -1;
     }
 }
+
+/**
+ * Here, we use the slow fast pointer linked list approach.
+ * 
+ * Let us assume that every element in the array is a node in the linked list.
+ * The value of the node is the index of the next node.
+ * 
+ * For example:
+ * 
+ * nums = [1,3,4,2,2]
+ * 
+ * The linked list is:
+ * 0 -> 1 -> 3 -> 2 -> 4 -> 2 (loop)
+ * 
+ * 
+ * So first, we use the slow and fast pointer to find the intersection point.
+ * Then, we move the slow pointer to the start of the array.
+ * We move the slow and fast pointer one step at a time.
+ * The point where they meet is the duplicate element.
+ * 
+ * Refer here for explanation : https://www.geeksforgeeks.org/find-first-node-of-loop-in-a-linked-list/
+ */
+class Solution2 {
+    public int findDuplicate(int[] nums) {
+        int slow = nums[0];
+        int fast = nums[0];
+
+        do {
+            slow = nums[slow];
+            fast = nums[fast];
+            fast = nums[fast];
+        } while(slow !=fast);
+
+        slow = nums[0];
+        while(slow != fast){
+            slow = nums[slow];
+            if (slow == fast) {
+                break;
+            }
+            fast = nums[fast];
+        }
+        return slow;
+    }
+}

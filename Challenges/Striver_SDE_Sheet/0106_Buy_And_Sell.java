@@ -1,5 +1,5 @@
 /*
-Since we can buy or sell on any day, we scan and store the lowest priceand compare it to all subsequent prices.
+Since we can buy or sell on any day, we scan and store the lowest price and compare it to all subsequent prices.
 */
 class Solution {
     public int maxProfit(int[] prices) {
