@@ -25,3 +25,36 @@ class Solution {
         return ans;
     }
 }
+
+/*
+ * Here, we create an emptty ans array.
+ * 
+ * The next element from a side = present cumulative product till there * element at that index. (because the cumulative product should not include the number).
+ * 
+ * ans[i+1] = lt;
+ * Here lt = cumulatie product from 0 to i.
+ * 
+ * ans[i-1] = ans[i-1] * rt (update with the right side product)
+ * Here rt = cumulatie product from l-1 to i.
+ */
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int l = nums.length;
+        int ans[] = new int[l];
+
+        int lt = 1;
+        ans[0] = 1;
+        for(int i=0; i<l-1; i++) {
+            lt = lt * nums[i];
+            ans[i+1] = lt;
+        }
+
+        int rt = 1;
+        for(int i=l-1; i>0; i--) {
+            rt = rt * nums[i];
+            ans[i-1] = ans[i-1] * rt;
+        }
+
+        return ans;
+    }
+}
