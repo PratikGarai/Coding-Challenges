@@ -35,7 +35,7 @@ class Solution {
  * Here lt = cumulatie product from 0 to i.
  * 
  * ans[i-1] = ans[i-1] * rt (update with the right side product)
- * Here rt = cumulatie product from l-1 to i.
+ * Here rt = cumulative product from l-1 to i.
  */
 class Solution {
     public int[] productExceptSelf(int[] nums) {

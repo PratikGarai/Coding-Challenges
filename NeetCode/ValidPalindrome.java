@@ -1,6 +1,6 @@
 /*
  * Two pointers, left and right.
- * Comapre ignorecae for valid alphanumeric.
+ * Comapre ignorecase for valid alphanumeric.
  */
 class Solution {
     public boolean isPalindrome(String s) {
