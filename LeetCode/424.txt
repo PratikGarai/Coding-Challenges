@@ -1,0 +1,22 @@
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        le = len(s)
+
+        l,r = 0, 0
+        m = {chr(i) : 0 for i in range(ord('A'), ord('Z')+1)}
+        mx = 0
+        mxf = 0
+
+        while r < le :
+            if (r-l) - mxf <= k :
+                m[s[r]] += 1
+                mxf = max(mxf, m[s[r]])
+                mx = max(mx, r-l)
+                r += 1
+            else :
+                m[s[l]] -= 1
+                l += 1
+
+        if (r-l) - mxf <= k :
+            mx = max(mx, r-l)
+        return mx
