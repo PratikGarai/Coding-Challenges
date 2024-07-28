@@ -26,30 +26,34 @@ func characterReplacement(s string, k int) int {
 	m := make(map[byte]int)
 
 	for {
+		// while right pointer is less than length of string
 		if right == l {
 			break
 		}
 
+		// if window is valid, increase the right pointer
 		if (right-left)-maxF <= k {
+			// increment counter
 			m[s[right]]++
+
+			// update maxF
 			if m[s[right]] > maxF {
 				maxF = m[s[right]]
 			}
 
-			if (right - left) > ans {
-				ans = (right - left)
-			}
-
+			// update the pointer
 			right++
+
+			// 1. Check if the condition is still valid after the update
+			// 2. Check if the window length is greater than the answer
+			// If both conditions are true, update the answer
+			if (right-left)-maxF <= k && right-left > ans {
+				ans = right - left
+			}
 		} else {
+			// if window is not valid, move the left pointer
 			m[s[left]]--
 			left++
-		}
-	}
-
-	if (right-left)-maxF <= k {
-		if right-left > ans {
-			ans = right - left
 		}
 	}
 
