@@ -1,3 +1,5 @@
+# TLE in case 155
+
 s = input()
 l = len(s)
 
