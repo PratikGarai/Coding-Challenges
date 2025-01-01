@@ -1,0 +1,19 @@
+class Solution:
+    def maxScore(self, s: str) -> int:
+        c0 = 0
+        c1 = 0
+        for i in s :
+            if i=='0' :
+                c0 += 1
+            else :
+                c1 += 1
+        ms = 0
+        z = 0
+        o = 0
+        for i in s[:-1] :
+            if i=='0' :
+                z += 1
+            else :
+                o += 1
+            ms = max(ms, (z + c1-o))
+        return ms
