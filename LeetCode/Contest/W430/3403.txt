@@ -1,0 +1,42 @@
+class Solution:
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1 :
+            return word 
+        
+        l = len(word)
+        start = 0
+        mChar = 'a'
+        mInd = 0
+        mLen = 1
+        
+        while start < l :
+            if ord(mChar) < ord(word[start]) :
+                rbuff = max(0, numFriends-start-1)
+                mChar = word[start]
+                mInd = start
+                mLen = l-rbuff-start
+                
+            elif ord(mChar) == ord(word[start]):
+                rbuff = max(0, numFriends-start-1)
+                cInd = start
+                cLen = l-rbuff-start
+                
+                replace = False
+                for i in range(min(mLen, cLen)) :
+                    if word[mInd+i] > word[cInd+i] :
+                        break
+                    elif word[mInd+i] < word[cInd+i] :
+                        replace = True
+                        break
+                        
+                if not replace :
+                    start += 1
+                    continue
+                
+                mChar = word[start]
+                mInd = start
+                mLen = l-rbuff-start
+            
+            start += 1
+        
+        return word[mInd : mInd + mLen]

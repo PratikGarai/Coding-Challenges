@@ -1,0 +1,75 @@
+class Solution:
+
+    def __init__(self) :
+        self.gcd_memo = {}
+        self.combosij = {}
+        self.combosji = {}
+        self.bin_search_memo = {}
+    
+    def gcd(self, a, b) :
+        if b == 0 :
+            return a
+        if (a, b) in self.gcd_memo :
+            return self.gcd_memo[(a, b)]
+        else :
+            _gcd = self.gcd(b, a%b)
+            self.gcd_memo[(a,b)] = _gcd
+            return _gcd
+
+    def bin_search(self, ratio, q) :
+        
+        if (ratio, q) in self.bin_search_memo :
+            return self.bin_search_memo[(ratio, q)]
+        
+        pairsji = self.combosji[ratio]
+        len_pairsji = len(pairsji)
+        left = 0
+        right = len_pairsji
+        result = -1
+        while left < right :
+            mid = (left+right)//2
+            if pairsji[mid][0] < q+2 :
+                left = mid+1
+            elif pairsji[mid][0] >= q+2 :
+                result = mid
+                right = mid
+
+        self.bin_search_memo[(ratio, q)] = result
+        return result
+    
+    def numberOfSubsequences(self, nums: List[int]) -> int:
+        l = len(nums) 
+        n = 0
+
+        ij = []
+        ji = []
+        for i in range(l-6) :
+            for j in range(i+2, l-4) :
+                _gcd = self.gcd(nums[i], nums[j])
+                num = nums[i]//_gcd
+                den = nums[j]//_gcd
+                ratio = num*1000 + den
+                if not ratio in self.combosij : 
+                    self.combosij[ratio] = {}
+                if not j in self.combosij[ratio] :
+                    self.combosij[ratio][j] = 0
+                self.combosij[ratio][j] += 1
+
+        for i in range(4, l-2) :
+            for j in range(i+2, l) :
+                _gcd = self.gcd(nums[i], nums[j])
+                ratio = nums[j]//_gcd*1000 + nums[i]//_gcd
+                if not ratio in self.combosji : 
+                    self.combosji[ratio] = []
+                self.combosji[ratio].append((i, j))
+
+        for ratio,counts in self.combosij.items() :
+            if ratio not in self.combosji :
+                continue
+
+            for q, count in counts.items() :
+                pos = self.bin_search(ratio, q)
+                if pos != -1 :
+                    le = len(self.combosji[ratio])
+                    n += (le-pos) * count
+        return n
