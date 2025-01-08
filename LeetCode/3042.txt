@@ -1,0 +1,22 @@
+class Solution:
+    def countPrefixSuffixPairs(self, words: List[str]) -> int:
+        l = len(words)
+        c = 0
+        ls = [len(i) for i in words]
+        for i in range(l-1) :
+            for j in range(i+1, l) :
+                if ls[i] > ls[j] :
+                    continue
+                matched1 = True
+                matched2 = True
+                for k in range(ls[i]) :
+                    if words[i][k] != words[j][k] :
+                        matched1 = False
+                        break
+                    if words[i][ls[i]-1-k] != words[j][ls[j]-1-k] :
+                        matched2 = False
+                        break
+
+                if matched1 and matched2 :
+                    c += 1
+        return c
