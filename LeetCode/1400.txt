@@ -1,0 +1,26 @@
+class Solution:
+    def canConstruct(self, s: str, k: int) -> bool:
+        
+        l = len(s)
+        if k > l : 
+            return False
+        if k == l :
+            return True
+
+        counts = {}
+        for i in s :
+            if i in counts : 
+                counts[i] += 1
+            else :
+                counts[i] = 1
+
+        odds = 0
+
+        for i in counts : 
+            if counts[i] % 2 != 0 :
+                odds += 1
+        
+        if odds > k :
+            return False
+        
+        return True
