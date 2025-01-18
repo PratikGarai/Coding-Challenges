@@ -1,0 +1,26 @@
+class Solution:
+    def isArraySpecial(self, nums: List[int], queries: List[List[int]]) -> List[bool]:
+        l = len(nums)
+        lsub = [-1 for i in range(l)]
+        rsub = [-1 for i in range(l)]
+        lastl = -1
+        lastr = -1
+        res = [True for i in queries]
+        
+        for i in range(l-1):
+            if (nums[i] + nums[i+1]) % 2 == 0 :
+                lastl = i
+            if (nums[l-1-i]+nums[l-2-i]) % 2 == 0 :
+                lastr = l-1-i
+            lsub[i+1] = lastl
+            rsub[l-2-i] = lastr
+        
+        i = 0
+        for l, r in queries : 
+            if lsub[l]==lsub[r] and rsub[l]==rsub[r] :
+                res[i] = True
+            else :
+                res[i] = False
+            i += 1
+        
+        return res

@@ -1,0 +1,23 @@
+class Solution:
+    def sumDigitDifferences(self, nums: List[int]) -> int:
+        
+        d = [[0 for digits in range(10)] for positions in range(10)]
+        
+        for num in nums :
+            if num == 0 :
+                d[0][0] += 1
+                continue
+            pos = 0
+            while num != 0 :
+                digit = num%10
+                num = num//10
+                d[pos][digit] += 1
+                pos += 1
+        
+        ans = 0
+        for pos in range(10) : 
+            for digit in range(9) :
+                for digit2 in range(digit+1, 10) :
+                    ans += d[pos][digit] * d[pos][digit2]
+                    
+        return ans
